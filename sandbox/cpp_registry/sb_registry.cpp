@@ -27,3 +27,8 @@ void* CppRegistry_getService(const char* id)
 {
     return CppRegistry::instance()->getService(id);
 }
+
+void CppRegistry_registerService(const char* id, void* service)
+{
+  CppRegistry::instance()->registerService(id, service);
+}

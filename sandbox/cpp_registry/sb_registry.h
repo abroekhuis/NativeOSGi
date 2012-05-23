@@ -43,11 +43,11 @@ public:
   template<class S>
   S* getService() const
   {
-    const char* interfaceId = osgi_interface_id<S>();
+    const char* interfaceId = osgi_interface_id<S*>();
     if (interfaceId == NULL)
     {
       std::cerr << "error: Missing OSGI_DECLARE_SERVICE_INTERFACE macro for " << typeid(S).name() << std::endl;
-      return;
+      return 0;
     }
     std::string ctocpp_symbolname = std::string(interfaceId) + "_ctocpp";
     void* ctocpp_symbol = dlsym(RTLD_DEFAULT, ctocpp_symbolname.c_str());

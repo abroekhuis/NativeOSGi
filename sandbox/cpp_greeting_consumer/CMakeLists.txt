@@ -1,18 +1,16 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(org_nativeosgi_greetingservice_interface)
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/public/include)
+project(org_nativeosgi_cppgreetingserviceconsumer)
 
 set(src_files
-  private/src/greeting_service_ctocpp.cpp
-  private/src/greeting_service_cpptoc.cpp
+  private/src/greeting_service_consumer.cpp
 )
 
-set(public_header
-  public/include/greeting_service.h
-  public/include/IGreetingService.h
-)
+include_directories(${CMAKE_SOURCE_DIR}/greeting_interface_bundle/public/include)
 
-add_library(${PROJECT_NAME} SHARED ${src_files} ${public_header})
+add_library(${PROJECT_NAME} SHARED ${src_files})
+target_link_libraries(${PROJECT_NAME}
+                      org_nativeosgi_greetingservice_interface # A C++ bundle needs to link to the interface bundle
+                      cpp_sb_registry
+                      )
 
