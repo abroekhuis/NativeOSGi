@@ -1,34 +1,44 @@
 #include "sb_registry.h"
 
-#include "sb_registry_c_api.h"
 
 CppRegistry* CppRegistry::instance()
 {
-    static CppRegistry registry;
-    return &registry;
+  static CppRegistry registry;
+  return &registry;
 }
 
-void CppRegistry::registerService(const std::string& interfaceId, void* impl)
+void CppRegistry::registerService(const std::string& interfaceId, void* impl, bool isCpp, bool isC)
 {
-    std::cout << "Registering service " << interfaceId << " (addr " << impl << ")" << std::endl;
-    m_MapIdToService[interfaceId] = impl;
+  std::cout << "Registering service " << interfaceId << " (addr " << impl << ")" << std::endl;
+  ServiceHandle serviceHandle = { isCpp, isC, impl };
+  m_MapIdToServiceHandle[interfaceId] = serviceHandle;
 }
 
-void* CppRegistry::getService(const std::string &interfaceId) const
+CppRegistry::ServiceHandle CppRegistry::getService(const std::string &interfaceId) const
 {
-    std::map<std::string,void*>::const_iterator i = m_MapIdToService.find(interfaceId);
-    if (i != m_MapIdToService.end())
+    std::map<std::string,ServiceHandle>::const_iterator i = m_MapIdToServiceHandle.find(interfaceId);
+    if (i != m_MapIdToServiceHandle.end())
       return i->second;
-    return 0;
+    ServiceHandle none = {false, false, 0};
+    return none;
 }
 
+
+//---------------------------------------------------
+// C interface
+//---------------------------------------------------
 
 void* CppRegistry_getService(const char* id)
 {
-    return CppRegistry::instance()->getService(id);
+  CppRegistry::ServiceHandle serviceHandle = CppRegistry::instance()->getService(id);
+  if (serviceHandle.hasCInterface)
+  {
+    return serviceHandle.handle;
+  }
+  return 0;
 }
 
 void CppRegistry_registerService(const char* id, void* service)
 {
-  CppRegistry::instance()->registerService(id, service);
+  CppRegistry::instance()->registerService(id, service, false, true);
 }

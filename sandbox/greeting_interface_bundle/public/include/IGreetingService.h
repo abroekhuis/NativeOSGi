@@ -1,3 +1,6 @@
+#ifndef IGreetingService_h__
+#define IGreetingService_h__
+
 #include "greeting_service.h"
 
 #include <sb_osgi_interface.h>
@@ -10,3 +13,5 @@ struct IGreetingService {
 };
 
 OSGI_DECLARE_SERVICE_INTERFACE(IGreetingService)
+
+#endif
