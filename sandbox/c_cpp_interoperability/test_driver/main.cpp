@@ -4,6 +4,42 @@
 
 #include <test_driver_config.h>
 
+#include <osgi/BindingMacros.h>
+
+#include <ServiceRegistry.h>
+
+void register_bindings(void* libHandle, const char* bundle)
+{
+
+  // get hook to register service bindings
+  void* register_symbol = dlsym(libHandle, "osgi_register_bindings");
+  if (register_symbol == 0)
+  {
+    printf("info: symbol osgi_register_bindings not found for %s.\n", bundle);
+    return;
+  }
+
+  typedef void(*register_func_t)(osgi_binding_registry*);
+  register_func_t register_func = (register_func_t)register_symbol;
+
+  // Register service bindings
+  register_func(ServiceRegistry::bindingRegistry(bundle));
+}
+
+int load_api_bundle(const char* libPath)
+{
+  void* libHandle = dlopen(libPath, RTLD_LAZY);
+  if (libHandle == 0)
+  {
+      printf("error: dlopen(%s) failed\n", libPath);
+      return 1;
+  }
+
+  // register bindings
+  register_bindings(libHandle, libPath);
+  return 0;
+}
+
 int load_provider(const char* libPath)
 {
   void* libHandle = dlopen(libPath, RTLD_LAZY);
@@ -12,6 +48,11 @@ int load_provider(const char* libPath)
       printf("error: dlopen(%s) failed\n", libPath);
       return 1;
   }
+
+  // register bindings
+  register_bindings(libHandle, libPath);
+
+  // get hook to register services
 
   void* register_symbol = dlsym(libHandle, "register_services");
   if (register_symbol == 0)
@@ -57,6 +98,12 @@ int main(int argc, char** argv)
   int use_cpp_provider = 0;
   if (argc > 1) use_cpp_provider = 1;
 
+  // Load the api bundle to register C/C++ bindings.
+  // This should be done by the framework when starting a bundle which has a dependency
+  // on the api bundle. The api bundle should be started first, registering the bindings
+  int err = load_api_bundle(ROOT_BINARY_DIR "greeting_interface_bundle/liborg_nativeosgi_greetingservice_interface.so");
+  if (err) return err;
+
   if (use_cpp_provider)
   {
     // Register a service implementation provided by a C++ bundle
@@ -65,7 +112,7 @@ int main(int argc, char** argv)
   }
   else
   {
-    // Register a service implementation provided by a C++ bundle
+    // Register a service implementation provided by a C bundle
     int err = load_provider(ROOT_BINARY_DIR "c_greeting_provider/liborg_nativeosgi_cgreetingserviceprovider.so");
     if (err) return err;
   }

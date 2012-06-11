@@ -1,7 +1,8 @@
 
 #include <ICppOnlyService.h>
 
-#include <sb_registry.h>
+#include <ServiceRegistry.h>
+#include <osgi/BundleContext.h>
 
 #include <iostream>
 
@@ -19,5 +20,5 @@ public:
 extern "C" void register_services()
 {
   std::cout << "C++ bundle registering C++ only service" << std::endl;
-  CppRegistry::instance()->registerService<ICppOnlyService>(new CppOnlyService);
+  ServiceRegistry::bundleContext()->registerService<ICppOnlyService>(new CppOnlyService);
 }

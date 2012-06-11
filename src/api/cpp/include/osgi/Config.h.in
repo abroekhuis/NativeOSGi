@@ -1,0 +1,121 @@
+/*
+  Config.h
+  this file is generated. Do not change!
+*/
+
+#pragma once
+#ifndef OSGI_CONFIG_H_
+#define OSGI_CONFIG_H_
+
+#cmakedefine OSGI_ENABLE_THREADING_SUPPORT
+#cmakedefine OSGI_USE_CXX11
+
+//-------------------------------------------------------------------
+// Platform defines
+//-------------------------------------------------------------------
+
+#if defined(__APPLE__)
+  #define OSGI_PLATFORM_APPLE
+#endif
+
+#if defined(_WIN32) || defined(_WIN64)
+  #define OSGI_PLATFORM_WINDOWS
+#else
+  #define OSGI_PLATFORM_POSIX
+#endif
+
+//-------------------------------------------------------------------
+// Compiler defines
+//-------------------------------------------------------------------
+
+#if defined(_MSC_VER) && !defined(_SCL_SECURE_NO_WARNINGS)
+  #define _SCL_SECURE_NO_WARNINGS
+#endif
+
+//-------------------------------------------------------------------
+// Hash Container
+//-------------------------------------------------------------------
+
+#ifdef OSGI_USE_CXX11
+
+  #include <unordered_map>
+  #include <unordered_set>
+
+  #define OSGI_HASH_FUNCTION_BEGIN(type) \
+  template<> \
+  struct hash<type> : std::unary_function<type, std::size_t> { \
+  std::size_t operator()(const type& arg) const {
+
+  #define OSGI_HASH_FUNCTION_END } };
+
+  #define OSGI_HASH_FUNCTION(type, arg) hash<type>()(arg)
+  #define OSGI_HASH_FUNCTION_FRIEND(type) friend struct ::std::hash<type>
+
+  #define OSGI_UNORDERED_MAP_TYPE ::std::unordered_map
+  #define OSGI_UNORDERED_SET_TYPE ::std::unordered_set
+
+  #define OSGI_HASH_FUNCTION_NAMESPACE ::std
+  #define OSGI_USING_HASH_FUNCTION using OSGI_HASH_FUNCTION_NAMESPACE::hash;
+  #define OSGI_HASH_FUNCTION_NAMESPACE_BEGIN namespace std {
+  #define OSGI_HASH_FUNCTION_NAMESPACE_END }
+
+#elif defined(__GNUC__)
+
+  #include <tr1/unordered_map>
+  #include <tr1/unordered_set>
+  
+  #define OSGI_HASH_FUNCTION_BEGIN(type) \
+  template<> \
+  struct hash<type> : std::unary_function<type, std::size_t> { \
+  std::size_t operator()(const type& arg) const { 
+  
+  #define OSGI_HASH_FUNCTION_END } };
+  
+  #define OSGI_HASH_FUNCTION(type, arg) hash<type>()(arg)
+  #define OSGI_HASH_FUNCTION_FRIEND(type) friend struct ::std::tr1::hash<type>
+
+  #define OSGI_UNORDERED_MAP_TYPE ::std::tr1::unordered_map
+  #define OSGI_UNORDERED_SET_TYPE ::std::tr1::unordered_set
+
+  #define OSGI_HASH_FUNCTION_NAMESPACE ::std::tr1
+  #define OSGI_USING_HASH_FUNCTION using OSGI_HASH_FUNCTION_NAMESPACE::hash;
+  #define OSGI_HASH_FUNCTION_NAMESPACE_BEGIN namespace std { namespace tr1 {
+  #define OSGI_HASH_FUNCTION_NAMESPACE_END }}
+
+#elif _MSC_VER <= 1500 // Visual Studio 2008 and lower
+
+  #include <hash_map>
+  #include <hash_set>
+  
+  #define OSGI_HASH_FUNCTION_BEGIN(type) \
+  template<> \
+  inline std::size_t hash_value<type>(const type& arg) { 
+  
+  #define OSGI_HASH_FUNCTION_END }
+  
+  #define OSGI_HASH_FUNCTION(type, arg) hash_value(arg)
+  #define OSGI_HASH_FUNCTION_FRIEND(type) friend std::size_t stdext::hash_value<type>(const type&)
+
+  #define OSGI_UNORDERED_MAP_TYPE ::stdext::hash_map
+  #define OSGI_UNORDERED_SET_TYPE ::stdext::hash_set
+
+  #define OSGI_HASH_FUNCTION_NAMESPACE ::stdext
+  #define OSGI_USING_HASH_FUNCTION using OSGI_HASH_FUNCTION_NAMESPACE::hash_value;
+  #define OSGI_HASH_FUNCTION_NAMESPACE_BEGIN namespace stdext {
+  #define OSGI_HASH_FUNCTION_NAMESPACE_END }
+
+#endif
+
+
+//-------------------------------------------------------------------
+// Threading Configuration
+//-------------------------------------------------------------------
+
+#ifdef OSGI_ENABLE_THREADING_SUPPORT
+  #define OSGI_DEFAULT_THREADING osgi::MultiThreaded
+#else
+  #define OSGI_DEFAULT_THREADING osgi::SingleThreaded
+#endif
+
+
+#endif // OSGI_CONFIG_H_

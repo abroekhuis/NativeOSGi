@@ -1,0 +1,27 @@
+
+#pragma once
+#ifndef OSGI_EXPORTMACROS_H
+#define OSGI_EXPORTMACROS_H
+
+#cmakedefine VISIBILITY_AVAILABLE
+
+/**
+  * Macros for import/export declarations
+  */
+#if defined(WIN32)
+  #define OSGI_ABI_EXPORT __declspec(dllexport)
+  #define OSGI_ABI_IMPORT __declspec(dllimport)
+  #define OSGI_ABI_LOCAL
+#else
+  #if defined(VISIBILITY_AVAILABLE)
+    #define OSGI_ABI_EXPORT __attribute__ ((visibility ("default")))
+    #define OSGI_ABI_IMPORT __attribute__ ((visibility ("default")))
+    #define OSGI_ABI_LOCAL  __attribute__ ((visibility ("hidden")))
+  #else
+    #define OSGI_ABI_EXPORT
+    #define OSGI_ABI_IMPORT
+    #define OSGI_ABI_LOCAL
+  #endif
+#endif
+
+#endif // OSGI_EXPORTMACROS_H

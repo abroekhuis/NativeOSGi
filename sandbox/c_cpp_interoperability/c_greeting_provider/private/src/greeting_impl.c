@@ -22,14 +22,21 @@
 
 #include "greeting_impl.h"
 
-#include <sb_registry_c_api.h>
+#include <osgi/bundle_context.h>
 
 void greeting_sayHello(greeting_t instance){
-	printf("Greetings from %s\n", instance->name);
+  printf("Greetings from a C Greeting service (%s)\n", instance->name);
 }
 
 void register_services()
 {
+  BUNDLE_CONTEXT bundleContext = NULL;
+  if (bundleContext_create(&bundleContext))
+  {
+    fprintf(stderr, "Creating a bundle context failed.");
+    return;
+  }
+
   greeting_service_t greetingService = malloc(sizeof(*greetingService));
 
   if (greetingService)
@@ -41,7 +48,7 @@ void register_services()
       greetingService->greeting_sayHello = greeting_sayHello;
 
       printf("C bundle registering Greeting service\n");
-      CppRegistry_registerService(IGreetingService_NAME, greetingService);
+      bundleContext_registerService(bundleContext, IGreetingService_NAME, greetingService, NULL, NULL);
     }
     else
     {

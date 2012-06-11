@@ -3,7 +3,7 @@
 
 #include "greeting_service.h"
 
-#include <sb_osgi_interface.h>
+#include <osgi/ServiceInterface.h>
 
 struct IGreetingService {
   // anchor the vtable

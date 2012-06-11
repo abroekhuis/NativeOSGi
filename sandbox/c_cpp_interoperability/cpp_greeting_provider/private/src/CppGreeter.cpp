@@ -1,7 +1,8 @@
 
 #include <IGreetingService.h>
 
-#include <sb_registry.h>
+#include <ServiceRegistry.h>
+#include <osgi/BundleContext.h>
 
 #include <iostream>
 
@@ -11,12 +12,12 @@ public:
 
   void sayHello() const
   {
-    std::cout << "Hello from a C++ Greeting service" << std::endl;
+    std::cout << "Greetings from a C++ Greeting service (" << osgi_service_interface_id<IGreetingService*>() << ")" << std::endl;
   }
 };
 
 extern "C" void register_services()
 {
   std::cout << "C++ bundle registering Greeting service" << std::endl;
-  CppRegistry::instance()->registerService<IGreetingService>(new CppGreeter);
+  ServiceRegistry::bundleContext()->registerService<IGreetingService>(new CppGreeter);
 }

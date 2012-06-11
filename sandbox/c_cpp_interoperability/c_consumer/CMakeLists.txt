@@ -6,9 +6,9 @@ set(src_files
   private/src/service_consumer.c
 )
 
-include_directories(${CMAKE_SOURCE_DIR}/greeting_interface_bundle/public/include)
-include_directories(${CMAKE_SOURCE_DIR}/cpp_complexservice_provider/public/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../greeting_interface_bundle/public/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../cpp_complexservice_provider/public/include)
 
 add_library(${PROJECT_NAME} SHARED ${src_files})
-target_link_libraries(${PROJECT_NAME} cpp_sb_registry)
+target_link_libraries(${PROJECT_NAME} sb_nativeosgi_c_binding)
 

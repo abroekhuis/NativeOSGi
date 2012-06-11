@@ -1,7 +1,8 @@
 
 #include <IComplexService.h>
 
-#include <sb_registry.h>
+#include <ServiceRegistry.h>
+#include <osgi/BundleContext.h>
 
 #include <iostream>
 #include <sstream>
@@ -35,5 +36,5 @@ public:
 extern "C" void register_services()
 {
   std::cout << "C++ bundle registering complex service" << std::endl;
-  CppRegistry::instance()->registerService<IComplexService>(new ComplexService);
+  ServiceRegistry::bundleContext()->registerService<IComplexService>(new ComplexService);
 }

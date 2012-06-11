@@ -22,7 +22,7 @@
 #include "greeting_service.h"
 
 struct greeting {
-	char *name;
+  char *name;
 };
 
 extern void greeting_sayHello(greeting_t instance);

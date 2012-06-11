@@ -3,7 +3,7 @@
 
 #include "complex_service.h"
 
-#include <sb_osgi_interface.h>
+#include <osgi/ServiceInterface.h>
 
 #include <vector>
 #include <string>
