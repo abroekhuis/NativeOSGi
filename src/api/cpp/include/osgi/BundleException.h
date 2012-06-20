@@ -8,13 +8,15 @@
 namespace osgi {
 
 /**
+ * \ingroup cpp_api
+ *
  * A Framework exception used to indicate that a bundle lifecycle problem
  * occurred.
  *
  * <p>
- * A {@code BundleException} object is created by the Framework to denote
+ * A \c BundleException object is created by the Framework to denote
  * an exception condition in the lifecycle of a bundle.
- * {@code BundleException}s should not be created by bundle developers.
+ * \c BundleExceptions should not be created by bundle developers.
  * A type code is used to identify the exception type for future extendability.
  *
  * <p>
@@ -92,7 +94,7 @@ public:
   };
 
   /**
-   * Creates a {@code BundleException} with the specified message and
+   * Creates a \c BundleException with the specified message and
    * exception cause.
    *
    * @param msg The associated message.
@@ -101,7 +103,7 @@ public:
   BundleException(const std::string& msg, const Exception& cause);
 
   /**
-   * Creates a {@code BundleException} with the specified message, type
+   * Creates a \c BundleException with the specified message, type
    * and exception cause.
    *
    * @param msg The associated message.
@@ -111,7 +113,7 @@ public:
   BundleException(const std::string& msg, Type type, const Exception& cause);
 
   /**
-   * Creates a {@code BundleException} with the specified message and
+   * Creates a \c BundleException with the specified message and
    * type.
    *
    * @param msg The message.
@@ -132,7 +134,7 @@ public:
   BundleException* clone() const;
 
   /**
-   * Returns the type for this exception or {@code UNSPECIFIED} if the
+   * Returns the type for this exception or \c UNSPECIFIED if the
    * type was unspecified or unknown.
    *
    * @return The type of this exception.

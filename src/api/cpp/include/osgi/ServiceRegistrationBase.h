@@ -10,8 +10,13 @@
 
 namespace osgi {
 
-class ServiceReferenceBase;
+template<class S> class ServiceReference;
 
+/**
+ * \ingroup cpp_support
+ *
+ * A service registration interface class for framework implementors.
+ */
 struct ServiceRegistrationBaseImpl : public SharedData
 {
   virtual ~ServiceRegistrationBaseImpl();
@@ -24,19 +29,24 @@ struct ServiceRegistrationBaseImpl : public SharedData
 };
 
 /**
+ * \ingroup cpp_api
+ *
  * A registered service.
  *
  * <p>
- * The Framework returns a {@code ServiceRegistration} object when a
- * {@code BundleContext.registerService} method invocation is successful.
- * The {@code ServiceRegistration} object is for the private use of the
+ * The Framework returns a \c ServiceRegistration object when a
+ * \c BundleContext.registerService method invocation is successful.
+ * The \c ServiceRegistration object is for the private use of the
  * registering bundle and should not be shared with other bundles.
  * <p>
- * The {@code ServiceRegistration} object may be used to update the
+ * The \c ServiceRegistration object may be used to update the
  * properties of the service or to unregister the service.
  *
+ * \note This class is provided as public API for low-level service queries only.
+ *       In almost all cases you should use ServiceRegistration<S> instead.
+ *
  * @see BundleContext#registerService(String[],Object,Dictionary)
- * @ThreadSafe
+ * @threadsafe
  * @noimplement
  */
 class ServiceRegistrationBase
@@ -59,16 +69,16 @@ public:
   operator bool() const;
 
   /**
-   * Returns a {@code ServiceReference} object for a service being
+   * Returns a \c ServiceReference object for a service being
    * registered.
    * <p>
-   * The {@code ServiceReference} object may be shared with other
+   * The \c ServiceReference object may be shared with other
    * bundles.
    *
    * @throws IllegalStateException If this
-   *         {@code ServiceRegistration} object has already been
+   *         \c ServiceRegistration object has already been
    *         unregistered.
-   * @return {@code ServiceReference} object.
+   * @return \c ServiceReference object.
    */
   ServiceReference<void> getReference(const std::string& interfaceId, bool cpp = true) const;
 
@@ -92,17 +102,17 @@ public:
    *        be made to this object after calling this method. To update the
    *        service's properties this method should be called again.
    *
-   * @throws IllegalStateException If this {@code ServiceRegistration}
+   * @throws IllegalStateException If this \c ServiceRegistration
    *         object has already been unregistered.
-   * @throws IllegalArgumentException If {@code properties} contains
+   * @throws IllegalArgumentException If \c properties contains
    *         case variants of the same key name.
    */
   void setProperties(const ServiceProperties& properties);
 
   /**
-   * Unregisters a service. Remove a {@code ServiceRegistration} object
-   * from the Framework service registry. All {@code ServiceReference}
-   * objects associated with this {@code ServiceRegistration} object
+   * Unregisters a service. Remove a \c ServiceRegistration object
+   * from the Framework service registry. All \c ServiceReference
+   * objects associated with this \c ServiceRegistration object
    * can no longer be used to interact with the service once unregistration is
    * complete.
    *
@@ -114,18 +124,18 @@ public:
    * <li>A service event of type {@link ServiceEvent#UNREGISTERING} is fired
    * so that bundles using this service can release their use of the service.
    * Once delivery of the service event is complete, the
-   * {@code ServiceReference} objects for the service may no longer be
+   * \c ServiceReference objects for the service may no longer be
    * used to get a service object for the service.
    * <li>For each bundle whose use count for this service is greater than
    * zero: <br>
    * The bundle's use count for this service is set to zero. <br>
    * If the service was registered with a {@link ServiceFactory} object, the
-   * {@code ServiceFactory.ungetService} method is called to release
+   * \c ServiceFactory.ungetService method is called to release
    * the service object for the bundle.
    * </ol>
    *
    * @throws IllegalStateException If this
-   *         {@code ServiceRegistration} object has already been
+   *         \c ServiceRegistration object has already been
    *         unregistered.
    * @see BundleContext#ungetService
    * @see ServiceFactory#ungetService

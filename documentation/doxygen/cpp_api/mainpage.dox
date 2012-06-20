@@ -1,0 +1,27 @@
+/**
+
+\mainpage
+
+This is the C++ OSGi API documentation.
+
+<p>
+See the public \ref cpp_api.
+
+*/
+
+/**
+
+\defgroup cpp_api API
+
+Public C++ API for OSGi.
+
+*/
+
+/**
+
+\defgroup cpp_support Framework support
+
+Support classes for framework implementors. These entities are not public API and should only be used
+by frameworks implementing the \ref cpp_api.
+
+*/

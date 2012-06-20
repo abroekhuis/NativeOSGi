@@ -17,7 +17,9 @@ class Any;
 struct Bundle;
 
 /**
- * A reference to a service.
+ * \ingroup cpp_support
+ *
+ * A service reference interface class for framework implementors.
  */
 struct ServiceReferenceBaseImpl : public SharedData
 {
@@ -41,7 +43,12 @@ struct ServiceReferenceBaseImpl : public SharedData
 };
 
 /**
+ * \ingroup cpp_api
+ *
  * A reference to a service.
+ *
+ * \note This class is provided as public API for low-level service queries only.
+ *       In almost all cases you should use ServiceReference<S> instead.
  */
 class ServiceReferenceBase
 {
@@ -70,16 +77,16 @@ public:
    *
    * <p>
    * If this <code>ServiceReference</code> and the specified
-   * <code>ServiceReference</code> have the same \link ServiceConstants::SERVICE_ID()
+   * <code>ServiceReference</code> have the same \link Constants::SERVICE_ID()
    * service id\endlink they are equal. This <code>ServiceReference</code> is less
    * than the specified <code>ServiceReference</code> if it has a lower
-   * {@link ServiceConstants::SERVICE_RANKING service ranking} and greater if it has a
+   * Constants::SERVICE_RANKING service ranking and greater if it has a
    * higher service ranking. Otherwise, if this <code>ServiceReference</code>
    * and the specified <code>ServiceReference</code> have the same
-   * {@link ServiceConstants::SERVICE_RANKING service ranking}, this
+   * {@link Constants::SERVICE_RANKING service ranking}, this
    * <code>ServiceReference</code> is less than the specified
    * <code>ServiceReference</code> if it has a higher
-   * {@link ServiceConstants::SERVICE_ID service id} and greater if it has a lower
+   * {@link Constants::SERVICE_ID service id} and greater if it has a lower
    * service id.
    *
    * @param reference The <code>ServiceReference</code> to be compared.
@@ -107,6 +114,11 @@ private:
 
 } // end namespace osgi
 
+/**
+ * \ingroup cpp_api
+ *
+ * Stream operator for printing information about a ServiceReference.
+ */
 OSGI_CPP_EXPORT std::ostream& operator<<(std::ostream& os, const osgi::ServiceReferenceBase& serviceRef);
 
 OSGI_HASH_FUNCTION_NAMESPACE_BEGIN

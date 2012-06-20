@@ -5,6 +5,8 @@
 
 #include <osgi/Config.h>
 
+/** \cond internal */
+
 #ifdef OSGI_ENABLE_THREADING_SUPPORT
 
   // Atomic compiler intrinsics
@@ -290,5 +292,7 @@ public:
 };
 
 } // end namespace osgi
+
+/** \endcond */
 
 #endif // USTHREADINGMODEL_H

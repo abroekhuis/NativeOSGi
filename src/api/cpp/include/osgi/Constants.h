@@ -8,11 +8,13 @@
 namespace osgi {
 
 /**
+ * \ingroup cpp_api
+ *
  * Defines standard names for the OSGi environment system properties, service
  * properties, and Manifest header attribute keys.
  *
  * <p>
- * The values associated with these keys are of type {@code std::string}, unless
+ * The values associated with these keys are of type \c std::string, unless
  * otherwise indicated.
  *
  * @noimplement
@@ -26,7 +28,7 @@ struct Constants
   /**
    * Service property identifying all of the class names under which a service
    * was registered in the Framework. The value of this property must be of
-   * type {@code std::vector<std::string>}.
+   * type \c std::vector<std::string>.
    *
    * <p>
    * This property is set by the Framework when a service is registered.
@@ -36,7 +38,7 @@ struct Constants
   /**
    * Service property identifying all of the class names under which a service
    * binding was registered in the Framework. The value of this property must be of
-   * type {@code std::vector<std::string>}.
+   * type \c std::vector<std::string>.
    *
    * <p>
    * This property is set by the Framework when a service is registered and all
@@ -46,7 +48,7 @@ struct Constants
 
   /**
    * Service property identifying a service's registration number. The value
-   * of this property must be of type {@code long int}.
+   * of this property must be of type \c long int.
    *
    * <p>
    * The value of this property is assigned by the Framework when a service is
@@ -60,10 +62,10 @@ struct Constants
    * Service property identifying a service's persistent identifier.
    *
    * <p>
-   * This property may be supplied in the {@code properties}
-   * {@code Dictionary} object passed to the
-   * {@code BundleContext.registerService} method. The value of this property
-   * must be of type {@code std::string} or {@code std::vector<std::string>}.
+   * This property may be supplied in the \c properties
+   * \c Dictionary object passed to the
+   * \c BundleContext.registerService method. The value of this property
+   * must be of type \c std::string or \c std::vector<std::string>.
    *
    * <p>
    * A service's persistent identifier uniquely identifies the service and
@@ -82,8 +84,8 @@ struct Constants
    *
    * <p>
    * This property may be supplied in the {@code properties
-   * Dictionary} object passed to the {@code BundleContext.registerService}
-   * method. The value of this property must be of type {@code Integer}.
+   * Dictionary} object passed to the \c BundleContext.registerService
+   * method. The value of this property must be of type \c Integer.
    *
    * <p>
    * The service ranking is used by the Framework to determine the <i>natural
@@ -93,12 +95,12 @@ struct Constants
    *
    * <p>
    * The default ranking is zero (0). A service with a ranking of
-   * {@code Integer.MAX_VALUE} is very likely to be returned as the default
-   * service, whereas a service with a ranking of {@code Integer.MIN_VALUE} is
+   * \c Integer.MAX_VALUE is very likely to be returned as the default
+   * service, whereas a service with a ranking of \c Integer.MIN_VALUE is
    * very unlikely to be returned.
    *
    * <p>
-   * If the supplied property value is not of type {@code int}, it is
+   * If the supplied property value is not of type \c int, it is
    * deemed to have a ranking value of zero.
    */
   static const std::string& SERVICE_RANKING(); //  = "service.ranking";
@@ -107,8 +109,8 @@ struct Constants
    * Service property identifying a service's vendor.
    *
    * <p>
-   * This property may be supplied in the properties {@code Dictionary} object
-   * passed to the {@code BundleContext.registerService} method.
+   * This property may be supplied in the properties \c Dictionary object
+   * passed to the \c BundleContext.registerService method.
    */
   static const std::string& SERVICE_VENDOR(); // = "service.vendor";
 
@@ -116,8 +118,8 @@ struct Constants
    * Service property identifying a service's description.
    *
    * <p>
-   * This property may be supplied in the properties {@code Dictionary} object
-   * passed to the {@code BundleContext.registerService} method.
+   * This property may be supplied in the properties \c Dictionary object
+   * passed to the \c BundleContext.registerService method.
    */
   static const std::string& SERVICE_DESCRIPTION(); // = "service.description";
 

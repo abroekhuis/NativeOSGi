@@ -1,0 +1,9 @@
+/**
+
+\ingroup cpp_api
+
+\def OSGI_UNORDERED_MAP_TYPE
+A system-dependent hash map.
+
+*/
+

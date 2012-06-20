@@ -26,7 +26,7 @@
 
 #include <cctype>
 
-/// \cond
+/// \cond internal
 namespace osgi {
 
 struct ci_char_traits : public std::char_traits<char>

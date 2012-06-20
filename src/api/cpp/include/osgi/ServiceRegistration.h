@@ -18,20 +18,22 @@ template<class Interface>
 struct InterfaceType {};
 
 /**
+ * \ingroup cpp_api
+ *
  * A registered service.
  *
  * <p>
- * The Framework returns a {@code ServiceRegistration} object when a
- * {@code BundleContext.registerService} method invocation is successful.
- * The {@code ServiceRegistration} object is for the private use of the
+ * The Framework returns a \c ServiceRegistration object when a
+ * \c BundleContext.registerService method invocation is successful.
+ * The \c ServiceRegistration object is for the private use of the
  * registering bundle and should not be shared with other bundles.
  * <p>
- * The {@code ServiceRegistration} object may be used to update the
+ * The \c ServiceRegistration object may be used to update the
  * properties of the service or to unregister the service.
  *
- * @param <S> Type of Service.
+ * @tparam S Type of Service.
  * @see BundleContext#registerService(String[],Object,Dictionary)
- * @ThreadSafe
+ * @threadsafe
  * @noimplement
  */
 template<class S, class T>
@@ -49,16 +51,16 @@ private:
 public:
 
   /**
-   * Returns a {@code ServiceReference} object for a service being
+   * Returns a \c ServiceReference object for a service being
    * registered.
    * <p>
-   * The {@code ServiceReference} object may be shared with other
+   * The \c ServiceReference object may be shared with other
    * bundles.
    *
    * @throws IllegalStateException If this
-   *         {@code ServiceRegistration} object has already been
+   *         \c ServiceRegistration object has already been
    *         unregistered.
-   * @return {@code ServiceReference} object.
+   * @return \c ServiceReference object.
    */
   ServiceReference<S> getReference(InterfaceType<S>) const
   {

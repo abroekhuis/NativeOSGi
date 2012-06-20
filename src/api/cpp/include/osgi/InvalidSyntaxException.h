@@ -14,7 +14,7 @@ namespace osgi {
  * syntax.
  *
  * <p>
- * An {@code InvalidSyntaxException} object indicates that a filter
+ * An \c InvalidSyntaxException object indicates that a filter
  * string parameter has an invalid syntax and cannot be parsed. See
  * {@link Filter} for a description of the filter string syntax.
  *
@@ -26,10 +26,10 @@ class OSGI_CPP_EXPORT InvalidSyntaxException : public Exception
 public:
 
   /**
-   * Creates an exception of type {@code InvalidSyntaxException}.
+   * Creates an exception of type \c InvalidSyntaxException.
    *
    * <p>
-   * This method creates an {@code InvalidSyntaxException} object with
+   * This method creates an \c InvalidSyntaxException object with
    * the specified message and the filter string which generated the
    * exception.
    *
@@ -39,10 +39,10 @@ public:
   InvalidSyntaxException(const std::string& msg, const std::string& filter);
 
   /**
-   * Creates an exception of type {@code InvalidSyntaxException}.
+   * Creates an exception of type \c InvalidSyntaxException.
    *
    * <p>
-   * This method creates an {@code InvalidSyntaxException} object with
+   * This method creates an \c InvalidSyntaxException object with
    * the specified message and the filter string which generated the
    * exception.
    *
@@ -54,7 +54,7 @@ public:
 
   /**
    * Returns the filter string that generated the
-   * {@code InvalidSyntaxException} object.
+   * \c InvalidSyntaxException object.
    *
    * @return The invalid filter string.
    * @see BundleContext#getServiceReferences

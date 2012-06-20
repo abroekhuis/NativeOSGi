@@ -26,6 +26,8 @@
 namespace osgi {
 
 /**
+ * \cond internal
+ *
  * This class acts as an atomic integer.
  *
  * The integer value represented by this class can be incremented
@@ -74,6 +76,8 @@ private:
   mutable IntType m_ReferenceCount;
 
 };
+
+/** \endcond */
 
 } // end namespace osgi
 

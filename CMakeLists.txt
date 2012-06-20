@@ -67,3 +67,5 @@ add_subdirectory(src)
 if(BUILD_SANDBOX)
   add_subdirectory(sandbox)
 endif()
+
+add_subdirectory(documentation/doxygen)

@@ -32,11 +32,10 @@ LGPL Exception version 1.1 (file LGPL_EXCEPTION.txt in Qt 4.7.3 package).
 #include <algorithm>
 #include <utility>
 
+/** \cond internal */
+
 namespace osgi {
 
-/**
- * \ingroup cpp_api_util
- */
 class SharedData
 {
 public:
@@ -50,9 +49,6 @@ private:
   SharedData& operator=(const SharedData&);
 };
 
-/**
- * \ingroup cpp_api_util
- */
 template <class T>
 class SharedDataPointer
 {
@@ -125,9 +121,6 @@ private:
   T *d;
 };
 
-/**
- * \ingroup cpp_api_util
- */
 template <class T>
 class ExplicitlySharedDataPointer
 {
@@ -269,5 +262,7 @@ void swap(  ExplicitlySharedDataPointer<T>& p1, ExplicitlySharedDataPointer<T>& 
 { p1.swap(p2); }
 
 } // end namespace osgi
+
+/** \endcond */
 
 #endif // OSGI_SHAREDDATA_H_

@@ -8,34 +8,36 @@
 namespace osgi {
 
 /**
+ * \ingroup cpp_api
+ *
  * A reference to a service.
  * 
  * <p>
- * The Framework returns {@code ServiceReference} objects from the
- * {@code BundleContext.getServiceReference} and
- * {@code BundleContext.getServiceReferences} methods.
+ * The Framework returns \c ServiceReference objects from the
+ * \c BundleContext.getServiceReference and
+ * \c BundleContext.getServiceReferences methods.
  * <p>
- * A {@code ServiceReference} object may be shared between bundles and can
+ * A \c ServiceReference object may be shared between bundles and can
  * be used to examine the properties of the service and to get the service
  * object.
  * <p>
  * Every service registered in the Framework has a unique
- * {@code ServiceRegistration} object and may have multiple, distinct
- * {@code ServiceReference} objects referring to it.
- * {@code ServiceReference} objects associated with a
- * {@code ServiceRegistration} object have the same {@code hashCode}
- * and are considered equal (more specifically, their {@code equals()}
- * method will return {@code true} when compared).
+ * \c ServiceRegistration object and may have multiple, distinct
+ * \c ServiceReference objects referring to it.
+ * \c ServiceReference objects associated with a
+ * \c ServiceRegistration object have the same \c hashCode
+ * and are considered equal (more specifically, their \c equals()
+ * method will return \c true when compared).
  * <p>
  * If the same service object is registered multiple times,
- * {@code ServiceReference} objects associated with different
- * {@code ServiceRegistration} objects are not equal.
+ * \c ServiceReference objects associated with different
+ * \c ServiceRegistration objects are not equal.
  * 
- * @param <S> Type of Service.
+ * @tparam S Type of Service.
  * @see BundleContext#getServiceReference
  * @see BundleContext#getServiceReferences
  * @see BundleContext#getService
- * @ThreadSafe
+ * @threadsafe
  * @noimplement
  */
 template<class S>

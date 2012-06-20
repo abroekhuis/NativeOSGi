@@ -49,7 +49,7 @@ OSGI_CPP_EXPORT std::string any_value_to_string(const std::vector<std::string>& 
 OSGI_CPP_EXPORT std::string any_value_to_string(const std::list<std::string>& val);
 
 /**
- * \ingroup cpp_api_utils
+ * \ingroup cpp_api
  *
  * An Any class represents a general type and is capable of storing any type, supporting type-safe extraction
  * of the internally stored data.
@@ -219,6 +219,9 @@ private:
     Placeholder* f_Content;
 };
 
+/**
+ * \ingroup cpp_api
+ */
 class BadAnyCastException : public std::bad_cast
 {
 public:
@@ -244,6 +247,8 @@ private:
 };
 
 /**
+ * \ingroup cpp_api
+ *
  * any_cast operator used to extract the ValueType from an Any*. Will return a pointer
  * to the stored value.
  *
@@ -262,6 +267,8 @@ ValueType* any_cast(Any* operand)
 }
 
 /**
+ * \ingroup cpp_api
+ *
  * any_cast operator used to extract a const ValueType pointer from an const Any*. Will return a const pointer
  * to the stored value.
  *
@@ -278,6 +285,8 @@ const ValueType* any_cast(const Any* operand)
 }
 
 /**
+ * \ingroup cpp_api
+ *
  * any_cast operator used to extract a copy of the ValueType from an const Any&.
  *
  * Example Usage:
@@ -298,6 +307,8 @@ ValueType any_cast(const Any& operand)
 }
 
 /**
+ * \ingroup cpp_api
+ *
  * any_cast operator used to extract a copy of the ValueType from an Any&.
  *
  * Example Usage:
@@ -318,6 +329,8 @@ ValueType any_cast(Any& operand)
 }
 
 /**
+ * \ingroup cpp_api
+ *
  * ref_any_cast operator used to return a const reference to the internal data.
  *
  * Example Usage:
@@ -334,6 +347,8 @@ const ValueType& ref_any_cast(const Any & operand)
 }
 
 /**
+ * \ingroup cpp_api
+ *
  * ref_any_cast operator used to return a reference to the internal data.
  *
  * Example Usage:
@@ -350,13 +365,13 @@ ValueType& ref_any_cast(Any& operand)
 }
 
 /**
- * \internal
- *
+ * \cond internal
  * The "unsafe" versions of any_cast are not part of the
  * public interface and may be removed at any time. They are
  * required where we know what type is stored in the any and can't
  * use typeid() comparison, e.g., when our types may travel across
  * different shared libraries.
+ * \endcond
  */
 template <typename ValueType>
 ValueType* unsafe_any_cast(Any* operand)
@@ -365,13 +380,15 @@ ValueType* unsafe_any_cast(Any* operand)
 }
 
 /**
- * \internal
+ * \cond internal
  *
  * The "unsafe" versions of any_cast are not part of the
  * public interface and may be removed at any time. They are
  * required where we know what type is stored in the any and can't
  * use typeid() comparison, e.g., when our types may travel across
  * different shared libraries.
+ *
+ * \endcond
  */
 template <typename ValueType>
 const ValueType* unsafe_any_cast(const Any* operand)
@@ -391,6 +408,15 @@ std::string any_value_to_string(const T& val)
 
 } // end namespace osgi
 
+/**
+ * \ingroup cpp_api
+ *
+ * Stream operator for printing the content of a \c Any class.
+ *
+ * @param os The output stream.
+ * @param any The \c Any to print.
+ * @return The output stream.
+ */
 inline std::ostream& operator<< (std::ostream& os, const osgi::Any& any)
 {
   return os << any.toString();
