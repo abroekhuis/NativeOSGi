@@ -12,6 +12,6 @@ struct IGreetingService {
   virtual void sayHello() const = 0;
 };
 
-OSGI_DECLARE_SERVICE_INTERFACE(IGreetingService)
+OSGI_DECLARE_SERVICE_INTERFACE(IGreetingService, IGreetingService_NAME)
 
 #endif

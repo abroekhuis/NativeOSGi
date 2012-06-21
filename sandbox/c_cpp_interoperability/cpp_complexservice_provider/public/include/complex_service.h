@@ -20,8 +20,10 @@
 #ifndef COMPLEX_SERVICE_H_
 #define COMPLEX_SERVICE_H_
 
+#include <osgi/MacroUtils.h>
+
 #define IComplexService_ID org_nativeosgi_IComplexService_1_0
-#define IComplexService_NAME "org_nativeosgi_IComplexService_1_0"
+#define IComplexService_NAME OSGI_XSTR(IComplexService_ID)
 
 typedef struct complex_data *complex_data_t;
 typedef struct complex_service *complex_service_t;

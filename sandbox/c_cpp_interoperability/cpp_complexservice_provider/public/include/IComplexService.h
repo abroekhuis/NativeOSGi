@@ -16,6 +16,6 @@ struct IComplexService
   virtual std::string ToSortedString(const std::vector<int>& ) const = 0;
 };
 
-OSGI_DECLARE_SERVICE_INTERFACE(IComplexService)
+OSGI_DECLARE_SERVICE_INTERFACE(IComplexService, IComplexService_NAME)
 
 #endif // IComplexService_h__

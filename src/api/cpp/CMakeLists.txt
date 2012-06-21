@@ -53,7 +53,7 @@ foreach(_file ${_configured_h_files})
 endforeach()
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/include)
-include_directories(../common/include)
+include_directories(../../util/include)
 include_directories(include)
 
 add_library(${PROJECT_NAME} SHARED ${_all_files})

@@ -3,11 +3,7 @@
 #ifndef OSGI_BINDINGMACROS_H_
 #define OSGI_BINDINGMACROS_H_
 
-#define OSGI_JOIN(x, y) OSGI_JOIN_AGAIN(x, y)
-#define OSGI_JOIN_AGAIN(x, y) x ## y
-
-#define OSGI_XSTR(x) OSGI_STR(x)
-#define OSGI_STR(x) #x
+#include <osgi/MacroUtils.h>
 
 typedef void*(*osgi_create_c_binding)(void*);
 typedef void*(*osgi_create_cpp_binding)(void*);

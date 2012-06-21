@@ -20,8 +20,10 @@
 #ifndef GREETING_H_
 #define GREETING_H_
 
+#include <osgi/MacroUtils.h>
+
 #define IGreetingService_ID org_nativeosgi_IGreetingService_1_0
-#define IGreetingService_NAME "org_nativeosgi_IGreetingService_1_0"
+#define IGreetingService_NAME OSGI_XSTR(IGreetingService_ID)
 
 typedef struct greeting *greeting_t;
 typedef struct greeting_service *greeting_service_t;

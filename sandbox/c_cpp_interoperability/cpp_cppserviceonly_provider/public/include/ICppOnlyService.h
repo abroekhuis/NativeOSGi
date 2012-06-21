@@ -4,7 +4,7 @@
 #include <osgi/ServiceInterface.h>
 
 #define ICppOnlyService_ID org_nativeosgi_ICppOnlyService_1_0
-#define ICppOnlyService_NAME "org_nativeosgi_ICppOnlyService_1_0"
+#define ICppOnlyService_NAME OSGI_XSTR(ICppOnlyService_ID)
 
 struct ICppOnlyService
 {
@@ -14,6 +14,6 @@ struct ICppOnlyService
   virtual void doSomething() = 0;
 };
 
-OSGI_DECLARE_SERVICE_INTERFACE(ICppOnlyService)
+OSGI_DECLARE_SERVICE_INTERFACE(ICppOnlyService, ICppOnlyService_NAME)
 
 #endif // ICppOnlyService_h__
