@@ -4,6 +4,8 @@
 The Native OSGi project is a collaborative effort to write, test, and implement the Java OSGi
 specifications in C and C++ with a focus on interoperability between C, C++ and Java.
 
+ - Doxygen documentation for a [C++ API draft](http://nativeosgi.org/documentation/cpp_api/html/index.html)
+
 ### Rationale for a native OSGi API
 
  - C and C++ as programming languages are here to stay (whether you like it or not).
