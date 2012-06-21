@@ -58,6 +58,35 @@ public:
 
 };
 
+/**
+ * \cond internal
+ *
+ * Specialization for void. The public constructor allows
+ * framework implementations to construct this template
+ * specialization based on a ServiceReferenceBase instance.
+ *
+ */
+template<>
+class ServiceReference<void> : public ServiceReferenceBase
+{
+
+public:
+
+  /**
+   * Construct an invalid service reference.
+   */
+  ServiceReference()
+  {}
+
+  ServiceReference(const ServiceReferenceBase& refBase)
+    : ServiceReferenceBase(refBase)
+  {
+  }
+
+  typedef void ServiceType;
+
+};
+
 }
 
 #endif // OSGI_SERVICEREFERENCE_H_

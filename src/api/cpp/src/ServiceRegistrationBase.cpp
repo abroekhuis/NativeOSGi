@@ -1,6 +1,6 @@
 
 #include <osgi/ServiceRegistrationBase.h>
-#include <osgi/ServiceReferenceBase.h>
+#include <osgi/ServiceReference.h>
 
 #include <cassert>
 
@@ -41,7 +41,7 @@ osgi::ServiceRegistrationBase::operator bool() const
   return static_cast<bool>(d);
 }
 
-ServiceReferenceBase ServiceRegistrationBase::getReference(const std::string &interfaceId, bool cpp) const
+ServiceReference<void> ServiceRegistrationBase::getReference(const std::string &interfaceId, bool cpp) const
 {
   assert(d);
   return d->getReference(interfaceId, cpp);

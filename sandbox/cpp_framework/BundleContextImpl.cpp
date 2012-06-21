@@ -3,7 +3,7 @@
 
 #include "ServiceRegistry.h"
 
-#include <osgi/ServiceReferenceBase.h>
+#include <osgi/ServiceReference.h>
 #include <osgi/ServiceRegistrationBase.h>
 #include <osgi/InvalidSyntaxException.h>
 
@@ -32,19 +32,19 @@ void BundleContextImpl::checkValidity() const
   throw osgi::IllegalStateException("Invalid BundleContext.");
 }
 
-osgi::ServiceReferenceBase BundleContextImpl::getBestServiceReference(
-    const std::vector<osgi::ServiceReferenceBase>& refs, bool cppOnly)
+osgi::ServiceReference<void> BundleContextImpl::getBestServiceReference(
+    const std::vector<osgi::ServiceReference<void> >& refs, bool cppOnly)
 {
   if (refs.empty())
   {
-    return osgi::ServiceReferenceBase();
+    return osgi::ServiceReference<void>();
   }
 
   // Loop through all service references and return
   // the "best" one according to its rank and ID.
   if (cppOnly)
   {
-    osgi::ServiceReferenceBase bestRef;
+    osgi::ServiceReference<void> bestRef;
     for (int i = 0; i < refs.size(); i++)
     {
       if (!bestRef)
@@ -67,7 +67,7 @@ osgi::ServiceReferenceBase BundleContextImpl::getBestServiceReference(
   }
   else
   {
-    osgi::ServiceReferenceBase bestRef;
+    osgi::ServiceReference<void> bestRef;
     for (int i = 0; i < refs.size(); i++)
     {
       if (!bestRef)
@@ -102,7 +102,7 @@ void *BundleContextImpl::getService(const osgi::ServiceReferenceBase& ref)
   return m_fw->getService(m_bundle, ref);
 }
 
-std::vector<osgi::ServiceReferenceBase>
+std::vector<osgi::ServiceReference<void> >
 BundleContextImpl::getServiceReferences(const std::string& clazz,
                                         const std::string& filter)
 {
@@ -117,7 +117,7 @@ BundleContextImpl::getServiceReferences(const std::string& clazz,
   return m_fw->getServiceReferences(clazz, osgi::Filter());
 }
 
-osgi::ServiceReferenceBase BundleContextImpl::getServiceReference(const std::string& clazz, bool cppOnly)
+osgi::ServiceReference<void> BundleContextImpl::getServiceReference(const std::string& clazz, bool cppOnly)
 {
   checkValidity();
 
@@ -135,7 +135,7 @@ osgi::ServiceReferenceBase BundleContextImpl::getServiceReference(const std::str
     // TODO logging
     //m_logger.log(m_bundle, Logger.LOG_ERROR, "BundleContextImpl: " + ex);
   }
-  return osgi::ServiceReferenceBase();
+  return osgi::ServiceReference<void>();
 }
 
 osgi::ServiceRegistrationBase BundleContextImpl::registerService(const std::map<std::string,void*>& servicePointers,

@@ -4,7 +4,7 @@
 #include "ServiceRegistrationImpl.h"
 #include "ServiceHandle.h"
 
-#include <osgi/ServiceReferenceBase.h>
+#include <osgi/ServiceReference.h>
 
 
 // ------------------ Binding Registry C functions -----------------
@@ -376,7 +376,7 @@ void* ServiceRegistry::getService(osgi::Bundle* bundle, const osgi::ServiceRefer
   return svcObj;
 }
 
-std::vector<osgi::ServiceReferenceBase>
+std::vector<osgi::ServiceReference<void> >
 ServiceRegistry::getServiceReferences(const std::string& className, const osgi::Filter& filter)
 {
   Lock(*this);
@@ -404,13 +404,13 @@ ServiceRegistry::getServiceReferences(const std::string& className, const osgi::
   //Set<BundleCapability> matches = m_regCapSet.match(filter, false);
 
   // Quick hack
-  std::vector<osgi::ServiceReferenceBase> matches;
+  std::vector<osgi::ServiceReference<void> > matches;
   for (BundleToRegsMapType::const_iterator i = m_regsMap.begin(); i != m_regsMap.end(); ++i)
   {
     for (std::list<osgi::ServiceRegistrationBase>::const_iterator reg = i->second.begin();
          reg != i->second.end(); ++reg)
     {
-      osgi::ServiceReferenceBase ref = reg->getReference(className, true);
+      osgi::ServiceReference<void> ref = reg->getReference(className, true);
       if (ref) matches.push_back(ref);
       ref = reg->getReference(className, false);
       if (ref) matches.push_back(ref);

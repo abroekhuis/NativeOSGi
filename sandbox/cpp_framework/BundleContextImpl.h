@@ -27,17 +27,17 @@ private:
 
   void checkValidity() const;
 
-  osgi::ServiceReferenceBase getBestServiceReference(const std::vector<osgi::ServiceReferenceBase>& refs, bool cppOnly);
+  osgi::ServiceReference<void> getBestServiceReference(const std::vector<osgi::ServiceReference<void> >& refs, bool cppOnly);
 
 
   // ------------ BundleContext implementation ---------------
 
   virtual void* getService(const osgi::ServiceReferenceBase& ref);
 
-  virtual std::vector<osgi::ServiceReferenceBase> getServiceReferences(const std::string& clazz,
+  virtual std::vector<osgi::ServiceReference<void> > getServiceReferences(const std::string& clazz,
                                                                        const std::string& filter);
 
-  virtual osgi::ServiceReferenceBase getServiceReference(const std::string& clazz, bool cppOnly = true);
+  virtual osgi::ServiceReference<void> getServiceReference(const std::string& clazz, bool cppOnly = true);
 
   virtual osgi::ServiceRegistrationBase registerService(const std::map<std::string,void*>& servicePointers, bool isNativeCpp,
                                                         const osgi::ServiceProperties& properties);

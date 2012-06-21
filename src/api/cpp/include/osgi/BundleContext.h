@@ -111,6 +111,19 @@ template<class S, class T = void> class ServiceRegistration;
 struct BundleContext
 {
 
+private:
+
+  /**
+   * Returns the service object referenced by the specified
+   * \c ServiceReferenceBase object.
+   *
+   * This method is used by the templated getService(ServiceReference)
+   * method and is required to return a void* pointer which can be
+   * cast to the template argument of the ServiceReference object which
+   * was originally used to wrap the \c reference argument.
+   */
+  virtual void* getService(const ServiceReferenceBase& reference) = 0;
+
 public:
 
   virtual ~BundleContext();
@@ -224,58 +237,6 @@ public:
   virtual std::vector<Bundle*> getBundles() const = 0;
 
   /**
-   * Returns the service object referenced by the specified
-   * <code>ServiceReference</code> object.
-   * <p>
-   * A bundle's use of a service is tracked by the bundle's use count of that
-   * service. Each time a service's service object is returned by
-   * {@link #getService(const ServiceReference&)} the context bundle's use count for
-   * that service is incremented by one. Each time the service is released by
-   * {@link #ungetService(const ServiceReference&)} the context bundle's use count
-   * for that service is decremented by one.
-   * <p>
-   * When a bundle's use count for a service drops to zero, the bundle should
-   * no longer use that service.
-   *
-   * <p>
-   * This method will always return <code>NULL</code> when the service
-   * associated with this <code>reference</code> has been unregistered.
-   *
-   * <p>
-   * The following steps are taken to get the service object:
-   * <ol>
-   * <li>If the service has been unregistered, <code>0</code> is returned.
-   * <li>The context bundle's use count for this service is incremented by
-   * one.
-   * <li>If the context bundle's use count for the service is currently one
-   * and the service was registered with an object implementing the
-   * <code>ServiceFactory</code> interface, the
-   * {@link ServiceFactory::getService} method is
-   * called to create a service object for the context bundle. This service
-   * object is cached by the framework. While the context bundle's use count
-   * for the service is greater than zero, subsequent calls to get the
-   * services's service object for the context bundle will return the cached
-   * service object. <br>
-   * If the <code>ServiceFactory</code> object throws an
-   * exception, <code>0</code> is returned and a warning is logged.
-   * <li>The service object for the service is returned.
-   * </ol>
-   *
-   * @param reference A reference to the service.
-   * @return A service object for the service associated with
-   *         <code>reference</code> or <code>0</code> if the service is not
-   *         registered or the <code>ServiceFactory</code> threw
-   *         an exception.
-   * @throws IllegalStateException If this BundleContext is no
-   *         longer valid.
-   * @throws InvalidArgument If the specified
-   *         <code>ServiceReference</code> is invalid (default constructed).
-   * @see #ungetService(const ServiceReference&)
-   * @see ServiceFactory
-   */
-  virtual void* getService(const ServiceReferenceBase& reference) = 0;
-
-  /**
    * Returns a list of <code>ServiceReferenceBase</code> objects. The returned
    * list contains services that
    * were registered under the specified class and match the specified filter
@@ -320,8 +281,8 @@ public:
    *         contains an invalid filter expression that cannot be parsed.
    * @throws IllegalStateException If this BundleContext is no longer valid.
    */
-  virtual std::vector<ServiceReferenceBase> getServiceReferences(const std::string& clazz,
-                                                                 const std::string& filter) = 0;
+  virtual std::vector<ServiceReference<void> > getServiceReferences(const std::string& clazz,
+                                                                    const std::string& filter) = 0;
 
   /**
    * Returns a <code>ServiceReferenceBase</code> object for a service that
@@ -353,7 +314,7 @@ public:
    * @throws ServiceException If no service was registered under the given class name.
    * @see #getServiceReferences(const std::string&, const std::string&)
    */
-  virtual ServiceReferenceBase getServiceReference(const std::string& clazz, bool cppOnly = true) = 0;
+  virtual ServiceReference<void> getServiceReference(const std::string& clazz, bool cppOnly = true) = 0;
 
   /**
    * Registers the specified service object with the specified properties

@@ -20,6 +20,7 @@ namespace osgi {
 struct Bundle;
 struct BundleContext;
 class Filter;
+template<class S> class ServiceReference;
 class ServiceReferenceBase;
 class ServiceRegistrationBase;
 }
@@ -134,8 +135,8 @@ public:
 
   void *getService(osgi::Bundle* bundle, const osgi::ServiceReferenceBase& ref);
 
-  std::vector<osgi::ServiceReferenceBase> getServiceReferences(const std::string& className,
-                                                               const osgi::Filter& filter);
+  std::vector<osgi::ServiceReference<void> > getServiceReferences(const std::string& className,
+                                                                  const osgi::Filter& filter);
 
   // Caller is expected to fire REGISTERED event.
   osgi::ServiceRegistrationBase registerService(osgi::Bundle* bundle,

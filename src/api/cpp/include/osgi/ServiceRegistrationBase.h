@@ -16,7 +16,7 @@ struct ServiceRegistrationBaseImpl : public SharedData
 {
   virtual ~ServiceRegistrationBaseImpl();
 
-  virtual ServiceReferenceBase getReference(const std::string& interfaceId, bool cpp) const = 0;
+  virtual ServiceReference<void> getReference(const std::string& interfaceId, bool cpp) const = 0;
 
   virtual void setProperties(const ServiceProperties& properties) = 0;
 
@@ -70,7 +70,7 @@ public:
    *         unregistered.
    * @return {@code ServiceReference} object.
    */
-  ServiceReferenceBase getReference(const std::string& interfaceId, bool cpp = true) const;
+  ServiceReference<void> getReference(const std::string& interfaceId, bool cpp = true) const;
 
   /**
    * Updates the properties associated with a service.

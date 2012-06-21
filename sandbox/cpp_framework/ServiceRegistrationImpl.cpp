@@ -6,6 +6,7 @@
 
 #include <osgi/Exception.h>
 #include <osgi/Constants.h>
+#include <osgi/ServiceReference.h>
 
 ServiceRegistrationImpl::ServiceRegistrationImpl(ServiceRegistry* registry,
     osgi::Bundle* bundle,
@@ -48,7 +49,7 @@ ServiceRegistrationImpl::ServiceRegistrationImpl(ServiceRegistry* registry,
   initializeProperties(dict);
 }
 
-osgi::ServiceReferenceBase ServiceRegistrationImpl::getReference(const std::string& interfaceId, bool cpp) const
+osgi::ServiceReference<void> ServiceRegistrationImpl::getReference(const std::string& interfaceId, bool cpp) const
 {
   Lock l(*this);
   // Make sure registration is valid.
@@ -60,15 +61,15 @@ osgi::ServiceReferenceBase ServiceRegistrationImpl::getReference(const std::stri
 
   if (cpp)
   {
-    std::map<std::string, osgi::ServiceReferenceBase>::const_iterator i = m_cppRefs.find(interfaceId);
+    std::map<std::string, osgi::ServiceReference<void> >::const_iterator i = m_cppRefs.find(interfaceId);
     if (i != m_cppRefs.end()) return i->second;
   }
   else
   {
-    std::map<std::string, osgi::ServiceReferenceBase>::const_iterator i = m_cRefs.find(interfaceId);
+    std::map<std::string, osgi::ServiceReference<void> >::const_iterator i = m_cRefs.find(interfaceId);
     if (i != m_cRefs.end()) return i->second;
   }
-  return osgi::ServiceReferenceBase();
+  return osgi::ServiceReference<void>();
 }
 
 void ServiceRegistrationImpl::setProperties(const osgi::ServiceProperties& dict)

@@ -30,7 +30,7 @@ public:
       const std::map<std::string,ServiceHandle>& svcHandles, ServiceType svcType,
       long int serviceId, const osgi::ServiceProperties& dict);
 
-  osgi::ServiceReferenceBase getReference(const std::string& interfaceId, bool cpp) const;
+  osgi::ServiceReference<void> getReference(const std::string& interfaceId, bool cpp) const;
 
   void setProperties(const osgi::ServiceProperties& dict);
 
@@ -95,8 +95,8 @@ private:
   // Associated property dictionary.
   osgi::ServiceProperties m_propMap;
   // Re-usable service references.
-  std::map<std::string, osgi::ServiceReferenceBase> m_cRefs;
-  std::map<std::string, osgi::ServiceReferenceBase> m_cppRefs;
+  std::map<std::string, osgi::ServiceReference<void> > m_cRefs;
+  std::map<std::string, osgi::ServiceReference<void> > m_cppRefs;
   // Flag indicating that we are unregistering.
   bool m_isUnregistering;
 };

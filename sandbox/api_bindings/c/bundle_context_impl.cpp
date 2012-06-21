@@ -2,6 +2,7 @@
 #include <osgi/bundle_context.h>
 
 #include <osgi/BundleContext.h>
+#include <osgi/ServiceReference.h>
 
 #include <ServiceRegistry.h>
 
@@ -10,7 +11,7 @@ struct bundleContext {
 };
 
 struct serviceReference {
-  osgi::ServiceReferenceBase handle;
+  osgi::ServiceReference<void> handle;
 };
 
 int bundleContext_create(BUNDLE_CONTEXT *bundle_context)
@@ -34,7 +35,7 @@ int bundleContext_registerService(BUNDLE_CONTEXT bundle_context, char * serviceN
 int bundleContext_getServiceReference(BUNDLE_CONTEXT bundle_context, char * serviceName, SERVICE_REFERENCE *service_reference)
 {
   osgi::BundleContext* context = bundle_context->handle;
-  osgi::ServiceReferenceBase serviceRef = context->getServiceReference(serviceName, false);
+  osgi::ServiceReference<void> serviceRef = context->getServiceReference(serviceName, false);
   if (!serviceRef)
   {
     *service_reference = NULL;
@@ -50,7 +51,7 @@ int bundleContext_getServiceReference(BUNDLE_CONTEXT bundle_context, char * serv
 int bundleContext_getService(BUNDLE_CONTEXT bundle_context, SERVICE_REFERENCE reference, void **service_instance)
 {
   osgi::BundleContext* context = bundle_context->handle;
-  osgi::ServiceReferenceBase ref = reference->handle;
+  osgi::ServiceReference<void> ref = reference->handle;
 
   *service_instance = context->getService(ref);
 
