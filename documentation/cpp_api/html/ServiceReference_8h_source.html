@@ -111,16 +111,16 @@ $(document).ready(function(){initNavTree('ServiceReference_8h.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>osgi {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> S&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span>ServiceReference : <span class="keyword">public</span> ServiceReferenceBase</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classosgi_1_1ServiceReference.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a> : <span class="keyword">public</span> <a class="code" href="classosgi_1_1ServiceReferenceBase.html" title="A reference to a service.">ServiceReferenceBase</a></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">friend</span> <span class="keyword">struct </span>BundleContext;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">class</span> A, <span class="keyword">class</span> B&gt; <span class="keyword">friend</span> <span class="keyword">class </span>ServiceRegistration;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">friend</span> <span class="keyword">struct </span><a class="code" href="structosgi_1_1BundleContext.html" title="A bundle&#39;s execution context within the framework.">BundleContext</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">class</span> A, <span class="keyword">class</span> B&gt; <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classosgi_1_1ServiceRegistration.html" title="A registered service.">ServiceRegistration</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ServiceReference(<span class="keyword">const</span> ServiceReferenceBase&amp; refBase)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    : ServiceReferenceBase(refBase)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a>(<span class="keyword">const</span> <a class="code" href="classosgi_1_1ServiceReferenceBase.html" title="A reference to a service.">ServiceReferenceBase</a>&amp; refBase)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    : <a class="code" href="classosgi_1_1ServiceReferenceBase.html" title="A reference to a service.">ServiceReferenceBase</a>(refBase)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
@@ -131,16 +131,16 @@ $(document).ready(function(){initNavTree('ServiceReference_8h.html','');});
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">class </span>ServiceReference&lt;void&gt; : <span class="keyword">public</span> ServiceReferenceBase</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="classosgi_1_1ServiceReference_3_01void_01_4.html">   72</a></span>&#160;<span class="keyword">class </span><a class="code" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a>&lt;void&gt; : <span class="keyword">public</span> <a class="code" href="classosgi_1_1ServiceReferenceBase.html" title="A reference to a service.">ServiceReferenceBase</a></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  ServiceReference()</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classosgi_1_1ServiceReference_3_01void_01_4.html#ab459ced16adb741a455b5b413bdc1826">   80</a></span>&#160;  <a class="code" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a>()</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  ServiceReference(<span class="keyword">const</span> ServiceReferenceBase&amp; refBase)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    : ServiceReferenceBase(refBase)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <a class="code" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a>(<span class="keyword">const</span> <a class="code" href="classosgi_1_1ServiceReferenceBase.html" title="A reference to a service.">ServiceReferenceBase</a>&amp; refBase)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    : <a class="code" href="classosgi_1_1ServiceReferenceBase.html" title="A reference to a service.">ServiceReferenceBase</a>(refBase)</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('ServiceReference_8h.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_9bec7083027963d9f9ceae2cc7474de5.html">git</a></li><li class="navelem"><a class="el" href="dir_09cbb5787e68bfa02e1730649604a837.html">NativeOSGi</a></li><li class="navelem"><a class="el" href="dir_aca1170b75ae459e0c5b257722ec29d9.html">src</a></li><li class="navelem"><a class="el" href="dir_14375dd40e7e817ad6e1f87edf6dd39c.html">api</a></li><li class="navelem"><a class="el" href="dir_e53a7f1a6a75fe863146fde92ddf0403.html">cpp</a></li><li class="navelem"><a class="el" href="dir_bec8028fec5814f075ae68679c15e55c.html">include</a></li><li class="navelem"><a class="el" href="dir_8d973170cdfb981697297bbcef7e3771.html">osgi</a></li><li class="navelem"><b>ServiceReference.h</b></li>
-    <li class="footer">Generated on Thu Jun 21 2012 20:23:17 for Native OSGi C++ API by
+    <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

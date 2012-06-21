@@ -135,8 +135,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (con
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classosgi_1_1ServiceRegistrationBase.html">ServiceRegistrationBase</a> &amp;o) const </td></tr>
 <tr class="memitem:a6fa127da1e98a787629472e29061545e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fa127da1e98a787629472e29061545e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () const </td></tr>
-<tr class="memitem:abbc92fa5b9582f83b2eb24ffd29d5f5e"><td class="memItemLeft" align="right" valign="top">ServiceReference&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosgi_1_1ServiceRegistrationBase.html#abbc92fa5b9582f83b2eb24ffd29d5f5e">getReference</a> (const std::string &amp;interfaceId, bool cpp=true) const </td></tr>
-<tr class="memdesc:abbc92fa5b9582f83b2eb24ffd29d5f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code>ServiceReference</code> object for a service being registered.  <a href="#abbc92fa5b9582f83b2eb24ffd29d5f5e"></a><br/></td></tr>
+<tr class="memitem:abbc92fa5b9582f83b2eb24ffd29d5f5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosgi_1_1ServiceRegistrationBase.html#abbc92fa5b9582f83b2eb24ffd29d5f5e">getReference</a> (const std::string &amp;interfaceId, bool cpp=true) const </td></tr>
+<tr class="memdesc:abbc92fa5b9582f83b2eb24ffd29d5f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object for a service being registered.  <a href="#abbc92fa5b9582f83b2eb24ffd29d5f5e"></a><br/></td></tr>
 <tr class="memitem:a4238402e77b1f2f41d33f5e8a60f3243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosgi_1_1ServiceRegistrationBase.html#a4238402e77b1f2f41d33f5e8a60f3243">setProperties</a> (const <a class="el" href="group__cpp__api.html#gab0aeecec02de2f46dd69e0cad120ee94">ServiceProperties</a> &amp;properties)</td></tr>
 <tr class="memdesc:a4238402e77b1f2f41d33f5e8a60f3243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the properties associated with a service.  <a href="#a4238402e77b1f2f41d33f5e8a60f3243"></a><br/></td></tr>
 <tr class="memitem:aaf53a0c80a2c0a29624290a8e9cc08f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosgi_1_1ServiceRegistrationBase.html#aaf53a0c80a2c0a29624290a8e9cc08f9">unregister</a> ()</td></tr>
@@ -157,7 +157,7 @@ This class is not intended to be implemented by clients. </dd></dl>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ServiceReference&lt; void &gt; osgi::ServiceRegistrationBase::getReference </td>
+          <td class="memname"><a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt; void &gt; osgi::ServiceRegistrationBase::getReference </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>interfaceId</em>, </td>
@@ -176,15 +176,15 @@ This class is not intended to be implemented by clients. </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a <code>ServiceReference</code> object for a service being registered. </p>
-<p>The <code>ServiceReference</code> object may be shared with other bundles.</p>
+<p>Returns a <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object for a service being registered. </p>
+<p>The <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object may be shared with other bundles.</p>
 <dl class="exception"><dt>Exceptions:</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IllegalStateException</td><td>If this <code><a class="el" href="classosgi_1_1ServiceRegistration.html" title="A registered service.">ServiceRegistration</a></code> object has already been unregistered. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd><code>ServiceReference</code> object. </dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd><code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object. </dd></dl>
 
 </div>
 </div>
@@ -241,13 +241,13 @@ A service event of type <a class="el" href="">ServiceEvent#MODIFIED</a> is fired
 </div><div class="memdoc">
 
 <p>Unregisters a service. </p>
-<p>Remove a <code><a class="el" href="classosgi_1_1ServiceRegistration.html" title="A registered service.">ServiceRegistration</a></code> object from the Framework service registry. All <code>ServiceReference</code> objects associated with this <code><a class="el" href="classosgi_1_1ServiceRegistration.html" title="A registered service.">ServiceRegistration</a></code> object can no longer be used to interact with the service once unregistration is complete.</p>
+<p>Remove a <code><a class="el" href="classosgi_1_1ServiceRegistration.html" title="A registered service.">ServiceRegistration</a></code> object from the Framework service registry. All <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> objects associated with this <code><a class="el" href="classosgi_1_1ServiceRegistration.html" title="A registered service.">ServiceRegistration</a></code> object can no longer be used to interact with the service once unregistration is complete.</p>
 <p>The following steps are required to unregister a service: </p>
 <ol>
 <li>
 The service is removed from the Framework service registry so that it can no longer be obtained. </li>
 <li>
-A service event of type <a class="el" href="">ServiceEvent#UNREGISTERING</a> is fired so that bundles using this service can release their use of the service. Once delivery of the service event is complete, the <code>ServiceReference</code> objects for the service may no longer be used to get a service object for the service. </li>
+A service event of type <a class="el" href="">ServiceEvent#UNREGISTERING</a> is fired so that bundles using this service can release their use of the service. Once delivery of the service event is complete, the <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> objects for the service may no longer be used to get a service object for the service. </li>
 <li>
 For each bundle whose use count for this service is greater than zero: <br/>
  The bundle's use count for this service is set to zero. <br/>
@@ -275,7 +275,7 @@ ServiceFactory::ungetService </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>osgi</b></li><li class="navelem"><a class="el" href="classosgi_1_1ServiceRegistrationBase.html">ServiceRegistrationBase</a></li>
-    <li class="footer">Generated on Thu Jun 21 2012 20:23:18 for Native OSGi C++ API by
+    <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

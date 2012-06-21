@@ -10,7 +10,10 @@ var hierarchy =
     ] ],
     [ "osgi::InterfaceType< Interface >", "structosgi_1_1InterfaceType.html", null ],
     [ "osgi::ServiceException", "classosgi_1_1ServiceException.html", null ],
-    [ "osgi::ServiceReferenceBase", "classosgi_1_1ServiceReferenceBase.html", null ],
+    [ "osgi::ServiceReferenceBase", "classosgi_1_1ServiceReferenceBase.html", [
+      [ "osgi::ServiceReference< S >", "classosgi_1_1ServiceReference.html", null ],
+      [ "osgi::ServiceReference< void >", "classosgi_1_1ServiceReference_3_01void_01_4.html", null ]
+    ] ],
     [ "osgi::ServiceReferenceBaseImpl", "structosgi_1_1ServiceReferenceBaseImpl.html", null ],
     [ "osgi::ServiceRegistrationBase", "classosgi_1_1ServiceRegistrationBase.html", [
       [ "osgi::ServiceRegistration< S, T >", "classosgi_1_1ServiceRegistration.html", null ],

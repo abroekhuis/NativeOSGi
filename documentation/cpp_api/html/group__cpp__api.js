@@ -8,6 +8,7 @@ var group__cpp__api =
     [ "Exception", "classosgi_1_1Exception.html", null ],
     [ "InvalidSyntaxException", "classosgi_1_1InvalidSyntaxException.html", null ],
     [ "ServiceException", "classosgi_1_1ServiceException.html", null ],
+    [ "ServiceReference", "classosgi_1_1ServiceReference.html", null ],
     [ "ServiceReferenceBase", "classosgi_1_1ServiceReferenceBase.html", null ],
     [ "ServiceRegistration", "classosgi_1_1ServiceRegistration.html", null ],
     [ "ServiceRegistrationBase", "classosgi_1_1ServiceRegistrationBase.html", null ],

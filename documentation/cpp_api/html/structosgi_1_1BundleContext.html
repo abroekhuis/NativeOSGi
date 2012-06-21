@@ -125,9 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a510548621888bb4b545fccfd8ba2f326"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; Bundle * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#a510548621888bb4b545fccfd8ba2f326">getBundles</a> () const =0</td></tr>
 <tr class="memdesc:a510548621888bb4b545fccfd8ba2f326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of all known modules.  <a href="#a510548621888bb4b545fccfd8ba2f326"></a><br/></td></tr>
 <tr class="memitem:ac2a29655ce5f9a3b78193a1beb9b3cab"><td class="memItemLeft" align="right" valign="top">virtual std::vector<br class="typebreak"/>
-&lt; ServiceReference&lt; void &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#ac2a29655ce5f9a3b78193a1beb9b3cab">getServiceReferences</a> (const std::string &amp;clazz, const std::string &amp;filter)=0</td></tr>
+&lt; <a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt; void &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#ac2a29655ce5f9a3b78193a1beb9b3cab">getServiceReferences</a> (const std::string &amp;clazz, const std::string &amp;filter)=0</td></tr>
 <tr class="memdesc:ac2a29655ce5f9a3b78193a1beb9b3cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of <code><a class="el" href="classosgi_1_1ServiceReferenceBase.html" title="A reference to a service.">ServiceReferenceBase</a></code> objects.  <a href="#ac2a29655ce5f9a3b78193a1beb9b3cab"></a><br/></td></tr>
-<tr class="memitem:a4925e35fd2eb059fe7e35ae15a1802ad"><td class="memItemLeft" align="right" valign="top">virtual ServiceReference&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#a4925e35fd2eb059fe7e35ae15a1802ad">getServiceReference</a> (const std::string &amp;clazz, bool cppOnly=true)=0</td></tr>
+<tr class="memitem:a4925e35fd2eb059fe7e35ae15a1802ad"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#a4925e35fd2eb059fe7e35ae15a1802ad">getServiceReference</a> (const std::string &amp;clazz, bool cppOnly=true)=0</td></tr>
 <tr class="memdesc:a4925e35fd2eb059fe7e35ae15a1802ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code><a class="el" href="classosgi_1_1ServiceReferenceBase.html" title="A reference to a service.">ServiceReferenceBase</a></code> object for a service that implements and was registered under the specified class.  <a href="#a4925e35fd2eb059fe7e35ae15a1802ad"></a><br/></td></tr>
 <tr class="memitem:a2e036a67a3a0b85601f00abffa7ce84a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classosgi_1_1ServiceRegistrationBase.html">ServiceRegistrationBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#a2e036a67a3a0b85601f00abffa7ce84a">registerService</a> (const std::map&lt; std::string, void * &gt; &amp;service, bool isNativeCpp, const <a class="el" href="group__cpp__api.html#gab0aeecec02de2f46dd69e0cad120ee94">ServiceProperties</a> &amp;properties)=0</td></tr>
 <tr class="memdesc:a2e036a67a3a0b85601f00abffa7ce84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the specified service object with the specified properties under the specified class names into the framework.  <a href="#a2e036a67a3a0b85601f00abffa7ce84a"></a><br/></td></tr>
@@ -138,17 +138,17 @@ Public Member Functions</h2></td></tr>
 template&lt;class S , class T &gt; </td></tr>
 <tr class="memitem:ac99fb8a4ea2c745e52b430410b136494"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classosgi_1_1ServiceRegistration.html">ServiceRegistration</a>&lt; S, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>registerService</b> (S *srvIFace1, T *srvIFace2, const <a class="el" href="group__cpp__api.html#gab0aeecec02de2f46dd69e0cad120ee94">ServiceProperties</a> &amp;properties=<a class="el" href="group__cpp__api.html#gab0aeecec02de2f46dd69e0cad120ee94">ServiceProperties</a>())</td></tr>
 <tr class="memitem:aa6326ddaefa00ea65495cd45694f408e"><td class="memTemplParams" colspan="2">template&lt;class S &gt; </td></tr>
-<tr class="memitem:aa6326ddaefa00ea65495cd45694f408e"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; ServiceReference<br class="typebreak"/>
+<tr class="memitem:aa6326ddaefa00ea65495cd45694f408e"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a><br class="typebreak"/>
 &lt; S &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#aa6326ddaefa00ea65495cd45694f408e">getServiceReferences</a> (const std::string &amp;filter=std::string())</td></tr>
-<tr class="memdesc:aa6326ddaefa00ea65495cd45694f408e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of <code>ServiceReference</code> objects.  <a href="#aa6326ddaefa00ea65495cd45694f408e"></a><br/></td></tr>
+<tr class="memdesc:aa6326ddaefa00ea65495cd45694f408e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> objects.  <a href="#aa6326ddaefa00ea65495cd45694f408e"></a><br/></td></tr>
 <tr class="memitem:ac7ecad76ec321f8eebd850cda36eedff"><td class="memTemplParams" colspan="2">template&lt;class S &gt; </td></tr>
-<tr class="memitem:ac7ecad76ec321f8eebd850cda36eedff"><td class="memTemplItemLeft" align="right" valign="top">ServiceReference&lt; S &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#ac7ecad76ec321f8eebd850cda36eedff">getServiceReference</a> ()</td></tr>
-<tr class="memdesc:ac7ecad76ec321f8eebd850cda36eedff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code>ServiceReference</code> object for a service that implements and was registered under the specified type.  <a href="#ac7ecad76ec321f8eebd850cda36eedff"></a><br/></td></tr>
+<tr class="memitem:ac7ecad76ec321f8eebd850cda36eedff"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt; S &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#ac7ecad76ec321f8eebd850cda36eedff">getServiceReference</a> ()</td></tr>
+<tr class="memdesc:ac7ecad76ec321f8eebd850cda36eedff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object for a service that implements and was registered under the specified type.  <a href="#ac7ecad76ec321f8eebd850cda36eedff"></a><br/></td></tr>
 <tr class="memitem:ad4a9d783b04e42c0e960fefde434591b"><td class="memTemplParams" colspan="2">template&lt;class S &gt; </td></tr>
-<tr class="memitem:ad4a9d783b04e42c0e960fefde434591b"><td class="memTemplItemLeft" align="right" valign="top">S *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#ad4a9d783b04e42c0e960fefde434591b">getService</a> (const ServiceReference&lt; S &gt; &amp;reference)</td></tr>
-<tr class="memdesc:ad4a9d783b04e42c0e960fefde434591b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the service object referenced by the specified <code>ServiceReference</code> object.  <a href="#ad4a9d783b04e42c0e960fefde434591b"></a><br/></td></tr>
+<tr class="memitem:ad4a9d783b04e42c0e960fefde434591b"><td class="memTemplItemLeft" align="right" valign="top">S *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#ad4a9d783b04e42c0e960fefde434591b">getService</a> (const <a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt; S &gt; &amp;reference)</td></tr>
+<tr class="memdesc:ad4a9d783b04e42c0e960fefde434591b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the service object referenced by the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object.  <a href="#ad4a9d783b04e42c0e960fefde434591b"></a><br/></td></tr>
 <tr class="memitem:ae551559d87c4f9231e12f85d3c5772d8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structosgi_1_1BundleContext.html#ae551559d87c4f9231e12f85d3c5772d8">ungetService</a> (const <a class="el" href="classosgi_1_1ServiceReferenceBase.html">ServiceReferenceBase</a> &amp;reference) const =0</td></tr>
-<tr class="memdesc:ae551559d87c4f9231e12f85d3c5772d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the service object referenced by the specified <code>ServiceReference</code> object.  <a href="#ae551559d87c4f9231e12f85d3c5772d8"></a><br/></td></tr>
+<tr class="memdesc:ae551559d87c4f9231e12f85d3c5772d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the service object referenced by the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object.  <a href="#ae551559d87c4f9231e12f85d3c5772d8"></a><br/></td></tr>
 <tr class="memitem:a524fcfd39d55cc2311c7420db8d5eb52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a524fcfd39d55cc2311c7420db8d5eb52"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addServiceListener</b> (const ServiceListener &amp;delegate, const std::string &amp;filter=std::string())=0</td></tr>
 <tr class="memitem:a42736a330f505190d277dd00d7090ba7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42736a330f505190d277dd00d7090ba7"></a>
@@ -400,7 +400,7 @@ RemoveServiceListener() </dd></dl>
 </div><div class="memdoc">
 
 <p>Creates a <code>Filter</code> object. </p>
-<p>This <code>Filter</code> object may be used to match a <code>ServiceReference</code> object or a <code>Dictionary</code> object.</p>
+<p>This <code>Filter</code> object may be used to match a <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object or a <code>Dictionary</code> object.</p>
 <p>If the filter cannot be parsed, an <a class="el" href="classosgi_1_1InvalidSyntaxException.html">InvalidSyntaxException</a> will be thrown with a human readable message where the filter became unparsable.</p>
 <dl class="params"><dt>Parameters:</dt><dd>
   <table class="params">
@@ -629,14 +629,14 @@ template&lt;class S &gt; </div>
         <tr>
           <td class="memname">S* osgi::BundleContext::getService </td>
           <td>(</td>
-          <td class="paramtype">const ServiceReference&lt; S &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt; S &gt; &amp;&#160;</td>
           <td class="paramname"><em>reference</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the service object referenced by the specified <code>ServiceReference</code> object. </p>
+<p>Returns the service object referenced by the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object. </p>
 <p>A bundle's use of a service is tracked by the bundle's use count of that service. Each time a service's service object is returned by <a class="el" href="structosgi_1_1BundleContext.html#ad4a9d783b04e42c0e960fefde434591b" title="Returns the service object referenced by the specified ServiceReference object.">getService&lt;S&gt;(const ServiceReference&lt;S&gt;&amp;)</a> the context bundle's use count for that service is incremented by one. Each time the service is released by ungetService(const ServiceReferenceBase&amp;) the context bundle's use count for that service is decremented by one. </p>
 <p>When a bundle's use count for a service drops to zero, the bundle should no longer use that service.</p>
 <p>This method will always return <code>NULL</code> when the service associated with this <code>reference</code> has been unregistered.</p>
@@ -668,7 +668,7 @@ The service object for the service is returned. </li>
 <dl class="exception"><dt>Exceptions:</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IllegalStateException</td><td>If this <a class="el" href="structosgi_1_1BundleContext.html" title="A bundle&#39;s execution context within the framework.">BundleContext</a> is no longer valid. </td></tr>
-    <tr><td class="paramname">InvalidArgumentException</td><td>If the specified <code>ServiceReference</code> was not created by the same framework instance as this <code><a class="el" href="structosgi_1_1BundleContext.html" title="A bundle&#39;s execution context within the framework.">BundleContext</a></code>. </td></tr>
+    <tr><td class="paramname">InvalidArgumentException</td><td>If the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> was not created by the same framework instance as this <code><a class="el" href="structosgi_1_1BundleContext.html" title="A bundle&#39;s execution context within the framework.">BundleContext</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -686,7 +686,7 @@ ServiceFactory </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual ServiceReference&lt;void&gt; osgi::BundleContext::getServiceReference </td>
+          <td class="memname">virtual <a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt;void&gt; osgi::BundleContext::getServiceReference </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>clazz</em>, </td>
@@ -741,7 +741,7 @@ ServiceFactory </dd></dl>
 template&lt;class S &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">ServiceReference&lt;S&gt; osgi::BundleContext::getServiceReference </td>
+          <td class="memname"><a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt;S&gt; osgi::BundleContext::getServiceReference </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -749,8 +749,8 @@ template&lt;class S &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a <code>ServiceReference</code> object for a service that implements and was registered under the specified type. </p>
-<p>The returned <code>ServiceReference</code> object is valid at the time of the call to this method. However as the Framework is a very dynamic environment, services can be modified or unregistered at any time.</p>
+<p>Returns a <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object for a service that implements and was registered under the specified type. </p>
+<p>The returned <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object is valid at the time of the call to this method. However as the Framework is a very dynamic environment, services can be modified or unregistered at any time.</p>
 <p>This method is the same as calling <a class="el" href="structosgi_1_1BundleContext.html#ac2a29655ce5f9a3b78193a1beb9b3cab">&lt;S&gt;(std::string)</a> with an empty filter expression and then finding the reference with the highest priority. It is provided as a convenience for when the caller is interested in any service that implements the specified class. </p>
 <p>If multiple such services exist, the service with the highest priority is selected. This priority is defined as the service reference with the highest ranking (as specified in its <a class="el" href="structosgi_1_1Constants.html#ad5fcf12b428f2e3f37fa40f035c014d1">Constants#SERVICE_RANKING</a> property) is returned. </p>
 <p>If there is a tie in ranking, the service with the lowest service ID (as specified in its <a class="el" href="structosgi_1_1Constants.html#abbbd9587b6ee91543f4214877889701f">Constants#SERVICE_ID</a> property); that is, the service that was registered first is returned.</p>
@@ -760,7 +760,7 @@ template&lt;class S &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd>A <code>ServiceReference</code> object. The returned object is invalid if no services are registered which implement the given type. </dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd>A <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object. The returned object is invalid if no services are registered which implement the given type. </dd></dl>
 <dl class="exception"><dt>Exceptions:</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IllegalStateException</td><td>If this <a class="el" href="structosgi_1_1BundleContext.html" title="A bundle&#39;s execution context within the framework.">BundleContext</a> is no longer valid. </td></tr>
@@ -779,7 +779,7 @@ template&lt;class S &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::vector&lt;ServiceReference&lt;void&gt; &gt; osgi::BundleContext::getServiceReferences </td>
+          <td class="memname">virtual std::vector&lt;<a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt;void&gt; &gt; osgi::BundleContext::getServiceReferences </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>clazz</em>, </td>
@@ -839,7 +839,7 @@ If the specified <code>filter</code> is not empty, the filter expression must ma
 template&lt;class S &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;ServiceReference&lt;S&gt; &gt; osgi::BundleContext::getServiceReferences </td>
+          <td class="memname">std::vector&lt;<a class="el" href="classosgi_1_1ServiceReference.html">ServiceReference</a>&lt;S&gt; &gt; osgi::BundleContext::getServiceReferences </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>filter</em> = <code>std::string()</code></td><td>)</td>
@@ -848,11 +848,11 @@ template&lt;class S &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns an array of <code>ServiceReference</code> objects. </p>
-<p>The returned array of <code>ServiceReference</code> objects contains services that were registered under the specified class and match the specified filter expression.</p>
+<p>Returns an array of <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> objects. </p>
+<p>The returned array of <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> objects contains services that were registered under the specified class and match the specified filter expression.</p>
 <p>The list is valid at the time of the call to this method. However since the Framework is a very dynamic environment, services can be modified or unregistered at any time.</p>
 <p>The specified <code>filter</code> expression is used to select the registered services whose service properties contain keys and values which satisfy the filter expression. See <a class="el" href="">Filter</a> for a description of the filter syntax. If the specified <code>filter</code> is <code>null</code>, all registered services are considered to match the filter. If the specified <code>filter</code> expression cannot be parsed, an <a class="el" href="classosgi_1_1InvalidSyntaxException.html">InvalidSyntaxException</a> will be thrown with a human readable message where the filter became unparsable.</p>
-<p>The result is an array of <code>ServiceReference</code> objects for all services that meet all of the following conditions: </p>
+<p>The result is an array of <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> objects for all services that meet all of the following conditions: </p>
 <ul>
 <li>
 If the specified class name, <code>clazz</code>, is not <code>null</code>, the service must have been registered with the specified class name. The complete list of class names with which a service was registered is available from the service's <a class="el" href="structosgi_1_1Constants.html#a14e1193832f8ca68e5cba59627cc9db2">objectClass</a> property. </li>
@@ -871,7 +871,7 @@ If the specified <code>filter</code> is not empty, the filter expression must ma
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd>An array of <code>ServiceReference</code> objects. </dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd>An array of <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> objects. </dd></dl>
 <dl class="exception"><dt>Exceptions:</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classosgi_1_1InvalidSyntaxException.html" title="A Framework exception used to indicate that a filter string has an invalid syntax.">InvalidSyntaxException</a></td><td>If the specified <code>filter</code> contains an invalid filter expression that cannot be parsed. </td></tr>
@@ -1293,7 +1293,7 @@ template&lt;class R &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Releases the service object referenced by the specified <code>ServiceReference</code> object. </p>
+<p>Releases the service object referenced by the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> object. </p>
 <p>If the context bundle's use count for the service is zero, this method returns <code>false</code>. Otherwise, the context modules's use count for the service is decremented by one.</p>
 <p>The service's service object should no longer be used and all references to it should be destroyed when a bundle's use count for the service drops to zero.</p>
 <p>The following steps are taken to unget the service object: </p>
@@ -1317,7 +1317,7 @@ If the context bundle's use count for the service is currently zero and the serv
 <dl class="exception"><dt>Exceptions:</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IllegalStateException</td><td>If this <a class="el" href="structosgi_1_1BundleContext.html" title="A bundle&#39;s execution context within the framework.">BundleContext</a> is no longer valid. </td></tr>
-    <tr><td class="paramname">InvalidArgumentException</td><td>If the specified <code>ServiceReference</code> was not created by the same framework instance as this <code><a class="el" href="structosgi_1_1BundleContext.html" title="A bundle&#39;s execution context within the framework.">BundleContext</a></code>. </td></tr>
+    <tr><td class="paramname">InvalidArgumentException</td><td>If the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> was not created by the same framework instance as this <code><a class="el" href="structosgi_1_1BundleContext.html" title="A bundle&#39;s execution context within the framework.">BundleContext</a></code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1337,7 +1337,7 @@ ServiceFactory </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>osgi</b></li><li class="navelem"><a class="el" href="structosgi_1_1BundleContext.html">BundleContext</a></li>
-    <li class="footer">Generated on Thu Jun 21 2012 20:23:17 for Native OSGi C++ API by
+    <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

@@ -1,6 +1,8 @@
 var searchData=
 [
   ['serviceexception',['ServiceException',['../classosgi_1_1ServiceException.html',1,'osgi']]],
+  ['servicereference',['ServiceReference',['../classosgi_1_1ServiceReference.html',1,'osgi']]],
+  ['servicereference_3c_20void_20_3e',['ServiceReference&lt; void &gt;',['../classosgi_1_1ServiceReference_3_01void_01_4.html',1,'osgi']]],
   ['servicereferencebase',['ServiceReferenceBase',['../classosgi_1_1ServiceReferenceBase.html',1,'osgi']]],
   ['servicereferencebaseimpl',['ServiceReferenceBaseImpl',['../structosgi_1_1ServiceReferenceBaseImpl.html',1,'osgi']]],
   ['serviceregistration',['ServiceRegistration',['../classosgi_1_1ServiceRegistration.html',1,'osgi']]],

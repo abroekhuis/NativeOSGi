@@ -109,6 +109,16 @@ $(document).ready(function(){initNavTree('classosgi_1_1ServiceReferenceBase.html
 
 <p>A reference to a service.  
  <a href="classosgi_1_1ServiceReferenceBase.html#details">More...</a></p>
+<div class="dynheader">
+Inheritance diagram for osgi::ServiceReferenceBase:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classosgi_1_1ServiceReferenceBase.png" usemap="#osgi::ServiceReferenceBase_map" alt=""/>
+  <map id="osgi::ServiceReferenceBase_map" name="osgi::ServiceReferenceBase_map">
+<area href="classosgi_1_1ServiceReference.html" title="A reference to a service." alt="osgi::ServiceReference&lt; S &gt;" shape="rect" coords="0,56,192,80"/>
+<area href="classosgi_1_1ServiceReference_3_01void_01_4.html" title="Specialization for void." alt="osgi::ServiceReference&lt; void &gt;" shape="rect" coords="202,56,394,80"/>
+</map>
+ </div></div>
 
 <p><a href="classosgi_1_1ServiceReferenceBase-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -129,7 +139,7 @@ Bundle *&#160;</td><td class="memItemRight" valign="bottom"><b>getBundle</b> () 
 <tr class="memitem:af5e3e8c122d4216bff8b7fcf378300d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af5e3e8c122d4216bff8b7fcf378300d7"></a>
 std::vector&lt; Bundle * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getUsingBundles</b> () const </td></tr>
 <tr class="memitem:a0aff8d27467e9030bcb82d52a6090a26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosgi_1_1ServiceReferenceBase.html#a0aff8d27467e9030bcb82d52a6090a26">operator&lt;</a> (const <a class="el" href="classosgi_1_1ServiceReferenceBase.html">ServiceReferenceBase</a> &amp;reference) const </td></tr>
-<tr class="memdesc:a0aff8d27467e9030bcb82d52a6090a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares this <code>ServiceReference</code> with the specified <code>ServiceReference</code> for order.  <a href="#a0aff8d27467e9030bcb82d52a6090a26"></a><br/></td></tr>
+<tr class="memdesc:a0aff8d27467e9030bcb82d52a6090a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares this <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> with the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> for order.  <a href="#a0aff8d27467e9030bcb82d52a6090a26"></a><br/></td></tr>
 <tr class="memitem:ad3b3b60a27b496c58ba6ae3dc4d4ae64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3b3b60a27b496c58ba6ae3dc4d4ae64"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classosgi_1_1ServiceReferenceBase.html">ServiceReferenceBase</a> &amp;reference) const </td></tr>
 <tr class="memitem:a6371e6e04c9a1e2a4503d368f18c24ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6371e6e04c9a1e2a4503d368f18c24ef"></a>
@@ -155,15 +165,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const
       </table>
 </div><div class="memdoc">
 
-<p>Compares this <code>ServiceReference</code> with the specified <code>ServiceReference</code> for order. </p>
-<p>If this <code>ServiceReference</code> and the specified <code>ServiceReference</code> have the same <a class="el" href="structosgi_1_1Constants.html#abbbd9587b6ee91543f4214877889701f">service id</a> they are equal. This <code>ServiceReference</code> is less than the specified <code>ServiceReference</code> if it has a lower <a class="el" href="structosgi_1_1Constants.html#ad5fcf12b428f2e3f37fa40f035c014d1" title="Service property identifying a service&#39;s ranking number.">Constants::SERVICE_RANKING</a> service ranking and greater if it has a higher service ranking. Otherwise, if this <code>ServiceReference</code> and the specified <code>ServiceReference</code> have the same <a class="el" href="structosgi_1_1Constants.html#ad5fcf12b428f2e3f37fa40f035c014d1">service ranking</a>, this <code>ServiceReference</code> is less than the specified <code>ServiceReference</code> if it has a higher <a class="el" href="structosgi_1_1Constants.html#abbbd9587b6ee91543f4214877889701f">service id</a> and greater if it has a lower service id.</p>
+<p>Compares this <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> with the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> for order. </p>
+<p>If this <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> and the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> have the same <a class="el" href="structosgi_1_1Constants.html#abbbd9587b6ee91543f4214877889701f">service id</a> they are equal. This <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> is less than the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> if it has a lower <a class="el" href="structosgi_1_1Constants.html#ad5fcf12b428f2e3f37fa40f035c014d1" title="Service property identifying a service&#39;s ranking number.">Constants::SERVICE_RANKING</a> service ranking and greater if it has a higher service ranking. Otherwise, if this <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> and the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> have the same <a class="el" href="structosgi_1_1Constants.html#ad5fcf12b428f2e3f37fa40f035c014d1">service ranking</a>, this <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> is less than the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> if it has a higher <a class="el" href="structosgi_1_1Constants.html#abbbd9587b6ee91543f4214877889701f">service id</a> and greater if it has a lower service id.</p>
 <dl class="params"><dt>Parameters:</dt><dd>
   <table class="params">
-    <tr><td class="paramname">reference</td><td>The <code>ServiceReference</code> to be compared. </td></tr>
+    <tr><td class="paramname">reference</td><td>The <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> to be compared. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns:</dt><dd>Returns a false or true if this <code>ServiceReference</code> is less than or greater than the specified <code>ServiceReference</code>. </dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd>Returns a false or true if this <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code> is less than or greater than the specified <code><a class="el" href="classosgi_1_1ServiceReference.html" title="A reference to a service.">ServiceReference</a></code>. </dd></dl>
 
 </div>
 </div>
@@ -177,7 +187,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>osgi</b></li><li class="navelem"><a class="el" href="classosgi_1_1ServiceReferenceBase.html">ServiceReferenceBase</a></li>
-    <li class="footer">Generated on Thu Jun 21 2012 20:23:17 for Native OSGi C++ API by
+    <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.1.1 </li>
   </ul>

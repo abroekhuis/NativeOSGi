@@ -9,6 +9,8 @@ var annotated =
       [ "Exception", "classosgi_1_1Exception.html", "classosgi_1_1Exception" ],
       [ "InvalidSyntaxException", "classosgi_1_1InvalidSyntaxException.html", "classosgi_1_1InvalidSyntaxException" ],
       [ "ServiceException", "classosgi_1_1ServiceException.html", "classosgi_1_1ServiceException" ],
+      [ "ServiceReference", "classosgi_1_1ServiceReference.html", "classosgi_1_1ServiceReference" ],
+      [ "ServiceReference< void >", "classosgi_1_1ServiceReference_3_01void_01_4.html", "classosgi_1_1ServiceReference_3_01void_01_4" ],
       [ "ServiceReferenceBaseImpl", "structosgi_1_1ServiceReferenceBaseImpl.html", "structosgi_1_1ServiceReferenceBaseImpl" ],
       [ "ServiceReferenceBase", "classosgi_1_1ServiceReferenceBase.html", "classosgi_1_1ServiceReferenceBase" ],
       [ "InterfaceType", "structosgi_1_1InterfaceType.html", null ],
