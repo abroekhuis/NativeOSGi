@@ -1,0 +1,27 @@
+var group__cpp__api =
+[
+    [ "Any", "classosgi_1_1Any.html", null ],
+    [ "BadAnyCastException", "classosgi_1_1BadAnyCastException.html", null ],
+    [ "BundleContext", "structosgi_1_1BundleContext.html", null ],
+    [ "BundleException", "classosgi_1_1BundleException.html", null ],
+    [ "Constants", "structosgi_1_1Constants.html", null ],
+    [ "Exception", "classosgi_1_1Exception.html", null ],
+    [ "InvalidSyntaxException", "classosgi_1_1InvalidSyntaxException.html", null ],
+    [ "ServiceException", "classosgi_1_1ServiceException.html", null ],
+    [ "ServiceReferenceBase", "classosgi_1_1ServiceReferenceBase.html", null ],
+    [ "ServiceRegistration", "classosgi_1_1ServiceRegistration.html", null ],
+    [ "ServiceRegistrationBase", "classosgi_1_1ServiceRegistrationBase.html", null ],
+    [ "OSGI_DECLARE_EXCEPTION", "group__cpp__api.html#gab0a7303ab2edcfb184953235ecb96de6", null ],
+    [ "OSGI_DECLARE_SERVICE_INTERFACE", "group__cpp__api.html#gad6a96549787dfae1fbf29b777506cd64", null ],
+    [ "OSGI_IMPLEMENT_EXCEPTION", "group__cpp__api.html#ga8129495a83df5cd1bb32188d321dcf91", null ],
+    [ "OSGI_UNORDERED_MAP_TYPE", "group__cpp__api.html#ga2ae0908864f7d947769a5fd130005ad7", null ],
+    [ "ServiceProperties", "group__cpp__api.html#gab0aeecec02de2f46dd69e0cad120ee94", null ],
+    [ "any_cast", "group__cpp__api.html#gabd52237631ebe0a73fcba4293b64bd8f", null ],
+    [ "any_cast", "group__cpp__api.html#gaba0e436f018c07854d56e022cf049b42", null ],
+    [ "any_cast", "group__cpp__api.html#ga5fa0b791f2ac9dc0e0814889b98ba734", null ],
+    [ "any_cast", "group__cpp__api.html#ga18babc89d5ebba74e1e62dfafb8f1309", null ],
+    [ "operator<<", "group__cpp__api.html#ga7a4ebcfb438b296dbd91bb980abd8941", null ],
+    [ "operator<<", "group__cpp__api.html#ga36585014a1a2ac4fd50b898dca121dad", null ],
+    [ "ref_any_cast", "group__cpp__api.html#gabd51bd1ab71e4fefb6e70bd5ba17c624", null ],
+    [ "ref_any_cast", "group__cpp__api.html#ga11cb7edf8a38851b99c22f538b67d534", null ]
+];
