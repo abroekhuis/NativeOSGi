@@ -61,7 +61,7 @@ public:
 };
 
 /**
- * \cond internal
+ * \ingroup cpp_support
  *
  * Specialization for void. The public constructor allows
  * framework implementations to construct this template
