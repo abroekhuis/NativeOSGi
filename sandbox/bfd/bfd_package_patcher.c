@@ -6,6 +6,27 @@ void printInfo(bfd *abfd, asection *sect, void *obj)
     printf("section name %s\n", sect->name);
 }
 
+void printSymbolTable(bfd *abfd) {
+  long size;
+  asymbol **symbol_table;
+  long symbols;
+  long i;
+
+  if((size=bfd_get_symtab_upper_bound(abfd))<=0) {
+    return 1;
+  }
+
+  symbol_table=xmalloc(size);
+    if((symbols=bfd_canonicalize_symtab(abfd, symbol_table))<0) {
+    return 1;
+  }
+
+  for(i=0; i<symbols; i++) {
+    printf("symbol: %s\n", symbol_table[i]->name);
+  }
+}
+
+
 int main(int argc, char* argv[])
 {
     bfd_init();
@@ -37,6 +58,10 @@ int main(int argc, char* argv[])
       printf("Reading .dynamic section failed.\n");
       return 1;
   }
+
+  printf("section read\n");
+
+  printSymbolTable(abfd);
 
   return 0;
 }
